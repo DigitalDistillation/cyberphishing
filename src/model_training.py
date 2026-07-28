@@ -1,10 +1,9 @@
 """
 Model Training Module
-AIAP Cybersecurity - Detecting Phishing Emails
+Cybersecurity - Detecting Phishing Emails
 
 This module defines the ModelTraining class responsible for stratified data splitting,
-baseline model training, hyperparameter tuning with GridSearchCV, and model evaluation
-(Accuracy, Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix).
+baseline model training, hyperparameter tuning with GridSearchCV, and metrics evaluation.
 """
 
 import logging
@@ -32,17 +31,10 @@ from sklearn.metrics import (
 class ModelTraining:
     """
     Handles data splitting, baseline model execution, hyperparameter tuning,
-    and comprehensive evaluation for classification problems.
+    and evaluation metrics for classification problems.
     """
 
     def __init__(self, config: Dict[str, Any], preprocessor: ColumnTransformer) -> None:
-        """
-        Initialize ModelTraining with configuration settings and preprocessor.
-
-        Args:
-            config (Dict[str, Any]): Configuration settings dictionary.
-            preprocessor (ColumnTransformer): Pre-configured ColumnTransformer instance.
-        """
         self.config = config
         self.preprocessor = preprocessor
         self.random_state = self.config.get("random_state", 42)
@@ -50,15 +42,6 @@ class ModelTraining:
     def split_data(
         self, df: pd.DataFrame
     ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Series, pd.Series, pd.Series]:
-        """
-        Splits dataset into stratified train, validation, and test sets.
-
-        Args:
-            df (pd.DataFrame): Cleaned input DataFrame.
-
-        Returns:
-            Tuple[X_train, X_val, X_test, y_train, y_val, y_test]: Data splits.
-        """
         logging.info("Encoding target column and performing stratified train-val-test split.")
 
         target_col = self.config["target_column"]
@@ -74,7 +57,6 @@ class ModelTraining:
         val_test_size = self.config.get("val_test_size", 0.3)
         val_size = self.config.get("val_size", 0.5)
 
-        # First split: Train vs (Val + Test) with stratification
         X_train, X_temp, y_train, y_temp = train_test_split(
             X,
             y,
@@ -83,7 +65,6 @@ class ModelTraining:
             stratify=y,
         )
 
-        # Second split: Val vs Test with stratification
         X_val, X_test, y_val, y_test = train_test_split(
             X_temp,
             y_temp,
@@ -101,17 +82,6 @@ class ModelTraining:
     def _compute_metrics(
         self, model: Pipeline, X: pd.DataFrame, y: pd.Series
     ) -> Dict[str, Any]:
-        """
-        Computes evaluation metrics (Accuracy, Precision, Recall, F1, ROC-AUC, Confusion Matrix).
-
-        Args:
-            model (Pipeline): Trained scikit-learn Pipeline.
-            X (pd.DataFrame): Feature matrix.
-            y (pd.Series): True labels.
-
-        Returns:
-            Dict[str, Any]: Calculated metric scores.
-        """
         y_pred = model.predict(X)
 
         if hasattr(model, "predict_proba"):
@@ -122,7 +92,7 @@ class ModelTraining:
 
         cm = confusion_matrix(y, y_pred).tolist()
 
-        metrics = {
+        return {
             "Accuracy": float(accuracy_score(y, y_pred)),
             "Precision": float(precision_score(y, y_pred, zero_division=0)),
             "Recall": float(recall_score(y, y_pred, zero_division=0)),
@@ -130,7 +100,6 @@ class ModelTraining:
             "ROC-AUC": roc_auc,
             "Confusion Matrix": cm,
         }
-        return metrics
 
     def train_and_evaluate_baseline_models(
         self,
@@ -139,12 +108,6 @@ class ModelTraining:
         X_val: pd.DataFrame,
         y_val: pd.Series,
     ) -> Tuple[Dict[str, Pipeline], Dict[str, Dict[str, Any]]]:
-        """
-        Trains baseline models wrapped in pipelines and evaluates on validation set.
-
-        Returns:
-            Tuple[Dict[str, Pipeline], Dict[str, Dict[str, Any]]]: Models and metrics.
-        """
         logging.info("Training and evaluating baseline models...")
 
         baseline_classifiers = {
@@ -191,12 +154,6 @@ class ModelTraining:
         X_val: pd.DataFrame,
         y_val: pd.Series,
     ) -> Tuple[Dict[str, Pipeline], Dict[str, Dict[str, Any]]]:
-        """
-        Performs hyperparameter tuning using GridSearchCV for models defined in config.
-
-        Returns:
-            Tuple[Dict[str, Pipeline], Dict[str, Dict[str, Any]]]: Tuned models and metrics.
-        """
         logging.info("Training and tuning models with GridSearchCV...")
 
         param_grids = self.config.get("param_grids", {})
@@ -251,19 +208,7 @@ class ModelTraining:
     def evaluate_final_model(
         self, model: Pipeline, X_test: pd.DataFrame, y_test: pd.Series, model_name: str
     ) -> Dict[str, Any]:
-        """
-        Evaluates the best selected model on the unseen holdout test dataset.
-
-        Args:
-            model (Pipeline): Best performing trained model pipeline.
-            X_test (pd.DataFrame): Test feature matrix.
-            y_test (pd.Series): Test labels.
-            model_name (str): Name of the best model.
-
-        Returns:
-            Dict[str, Any]: Metrics evaluated on the test set.
-        """
-        logging.info(f"Evaluating best model '{model_name}' on the test set.")
+        logging.info(f"Evaluating best model '{model_name}' on test set.")
         test_metrics = self._compute_metrics(model, X_test, y_test)
 
         logging.info(f"=== TEST SET METRICS FOR {model_name} ===")

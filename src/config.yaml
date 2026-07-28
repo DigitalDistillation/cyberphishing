@@ -1,17 +1,15 @@
-# AIAP Cybersecurity Phishing Detection Configuration
+# Cybersecurity Phishing Detection Configuration
 
 # File Paths & Data Setup
 file_path: "./data/data.csv"
 target_column: "phishing_email"
 
 # Data Splitting Parameters
-# val_test_size: Proportion of overall dataset split into (validation + test)
-# val_size: Proportion of (validation + test) assigned to validation (e.g. 0.5 means equal split)
 val_test_size: 0.3
 val_size: 0.5
 random_state: 42
 
-# Target Class Mapping (Categorical String -> Integer Label)
+# Target Class Mapping
 target_mapping:
   Legitimate: 0
   Phishing: 1
@@ -37,7 +35,7 @@ param_grids:
     classifier__C: [0.01, 0.1, 1.0, 10.0]
     classifier__penalty: ["l2"]
     classifier__solver: ["lbfgs"]
-    classifier__class_weight: ["balanced", None]
+    classifier__class_weight: ["balanced", null]
 
   DecisionTree:
     classifier__max_depth: [3, 5, 10, null]
