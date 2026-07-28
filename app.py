@@ -1,6 +1,6 @@
 """
 Streamlit Web Scanner App
-Cybersecurity - Detecting Phishing Emails
+Cybersecurity - Detecting Phishing Emails (NLP + Tabular Machine Learning)
 """
 
 import os
@@ -19,14 +19,17 @@ st.set_page_config(
 
 
 def load_model():
-    """Load trained pipeline model directly without stale caching."""
+    """Load trained hybrid NLP pipeline model directly."""
     if not os.path.exists(MODEL_PATH):
         return None
     return joblib.load(MODEL_PATH)
 
 
 def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dict:
-    text = raw_text or ""
+    """
+    Extracts raw email text alongside generalized structural metadata features.
+    """
+    text = (raw_text or "").strip()
     raw_sender = (sender_email or "").strip()
 
     email_match = re.search(r"[\w\.-]+@([\w\.-]+\.\w+)", raw_sender)
@@ -44,8 +47,8 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     urgent_words = [
         "account suspended",
         "verify your password",
-        "action required immediately",
-        "unauthorized access detected",
+        "action required",
+        "unauthorized access",
         "confirm your credit card",
         "24 hours to verify",
     ]
@@ -70,11 +73,12 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
         elif any(re.search(pat, raw_sender.lower()) for pat in suspicious_patterns):
             sender_domain_type = "Suspicious/Spoofed"
 
-    html_pattern = r"<html|<body|<p|<div|<a\s|<br|sq\s*\d+|booking|flight|itinerary"
+    html_pattern = r"<html|<body|<p|<div|<a\s|<br"
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
     html_content_flag = "Present" if is_html else "Absent"
 
     return {
+        "email_text": text,
         "email_length": max(email_length, 10),
         "number_of_links": min(number_of_links, 20),
         "number_of_attachments": min(number_of_attachments, 10),
@@ -86,9 +90,9 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
 
 model = load_model()
 
-st.title("🛡️ Cybersecurity – Phishing Email Scanner")
+st.title("🛡️ Cybersecurity – Phishing Email Scanner (NLP + ML Engine)")
 st.markdown(
-    "Upload email files (`.eml`, `.txt`) or paste raw email text to scan for phishing threats."
+    "Upload email files (`.eml`, `.txt`) or paste raw email text to scan with our hybrid NLP & tabular Machine Learning model."
 )
 
 if model is None:
@@ -122,24 +126,25 @@ with tab1:
             col1, col2 = st.columns([1, 1])
 
             with col1:
-                st.subheader("📊 Extracted Features")
-                st.dataframe(input_df.T.rename(columns={0: "Value"}), use_container_width=True)
+                st.subheader("📊 Feature Analysis")
+                disp_df = input_df.drop(columns=["email_text"]).T.rename(columns={0: "Value"})
+                st.dataframe(disp_df, use_container_width=True)
 
             with col2:
-                st.subheader("🛡️ Scan Result")
+                st.subheader("🛡️ AI Scan Result")
                 pred = model.predict(input_df)[0]
                 prob = model.predict_proba(input_df)[0]
                 phishing_prob = float(prob[1])
                 legit_prob = float(prob[0])
 
-                if pred == 1 and phishing_prob >= 0.5:
-                    st.error(f"🚨 **PHISHING DETECTED** (Risk Probability: {phishing_prob * 100:.1f}%)")
+                if pred == 1:
+                    st.error(f"🚨 **PHISHING DETECTED** (Probability: {phishing_prob * 100:.1f}%)")
                     st.progress(phishing_prob)
                 else:
                     st.success(f"✅ **LEGITIMATE EMAIL** (Confidence: {legit_prob * 100:.1f}%)")
                     st.progress(legit_prob)
 
-                st.markdown("### Feature Breakdown:")
+                st.markdown("### Structural & NLP Analysis:")
                 st.write(f"- **Sender Domain**: `{features['sender_domain_type']}`")
                 st.write(f"- **Urgent Keywords**: `{features['presence_of_urgent_keywords']}`")
                 st.write(f"- **Links Count**: `{features['number_of_links']}`")
@@ -150,6 +155,7 @@ with tab2:
     c1, c2 = st.columns(2)
 
     with c1:
+        text_in = st.text_input("Sample Email Text", "Hi team, please review the attached document.")
         length = st.number_input("Email Length", 10, 15000, 500)
         links = st.slider("Links Count", 0, 20, 2)
         attachments = st.slider("Attachments Count", 0, 10, 1)
@@ -162,6 +168,7 @@ with tab2:
     manual_df = pd.DataFrame(
         [
             {
+                "email_text": text_in,
                 "email_length": length,
                 "number_of_links": links,
                 "number_of_attachments": attachments,

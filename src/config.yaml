@@ -3,6 +3,7 @@
 # File Paths & Data Setup
 file_path: "./data/data.csv"
 target_column: "phishing_email"
+text_feature: "email_text"
 
 # Data Splitting Parameters
 val_test_size: 0.3
@@ -10,8 +11,7 @@ val_size: 0.5
 random_state: 42
 
 # Decision Threshold & Risk Tiers
-phishing_threshold: 0.80
-suspicious_threshold: 0.65
+phishing_threshold: 0.60
 
 # Target Class Mapping
 target_mapping:
@@ -29,30 +29,24 @@ nominal_features:
   - sender_domain_type
   - html_content_flag
 
-# Cross-Validation & Tuning Settings (Precision-Focused to Eliminate False Alarms)
+# Cross-Validation & Tuning Settings (NLP + Tabular Hybrid Pipeline)
 cv: 5
-scoring: "precision"
+scoring: "f1"
 
-# Model Hyperparameter Tuning Grids (Standard Unweighted Models with Smooth Regularization)
+# Model Hyperparameter Tuning Grids
 param_grids:
   LogisticRegression:
-    classifier__C: [0.01, 0.1, 1.0]
+    classifier__C: [0.1, 1.0, 10.0]
     classifier__penalty: ["l2"]
     classifier__solver: ["lbfgs"]
     classifier__class_weight: [null]
 
-  DecisionTree:
-    classifier__max_depth: [3, 5, 8]
-    classifier__min_samples_leaf: [5, 10]
-    classifier__criterion: ["gini", "entropy"]
-    classifier__class_weight: [null]
-
   RandomForest:
     classifier__n_estimators: [50, 100, 150]
-    classifier__max_depth: [3, 5, 8]
-    classifier__min_samples_leaf: [3, 5]
+    classifier__max_depth: [5, 10, null]
+    classifier__min_samples_leaf: [2, 5]
     classifier__class_weight: [null]
 
   KNN:
     classifier__n_neighbors: [5, 7, 9, 11]
-    classifier__weights: ["uniform"]
+    classifier__weights: ["uniform", "distance"]

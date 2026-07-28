@@ -2,25 +2,27 @@
 Data Preparation Module
 Cybersecurity - Detecting Phishing Emails
 
-This module defines the DataPreparation class responsible for loading,
-cleaning, and defining feature preprocessing pipelines (StandardScaler and OneHotEncoder).
+Combines NLP TF-IDF text features with numerical scaling and categorical encoding
+into a single ColumnTransformer preprocessor.
 """
 
 import logging
 from typing import Dict, Any
 import pandas as pd
 from sklearn.compose import ColumnTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 
 class DataPreparation:
     """
-    Handles data cleaning, validation, and creation of Scikit-Learn
-    ColumnTransformers for numerical scaling and categorical encoding.
+    Handles data cleaning, validation, and creation of a hybrid NLP + Tabular
+    Scikit-Learn ColumnTransformer preprocessor.
     """
 
     def __init__(self, config: Dict[str, Any]) -> None:
         self.config = config
+        self.text_feature = self.config.get("text_feature", "email_text")
         self.numerical_features = self.config.get("numerical_features", [])
         self.nominal_features = self.config.get("nominal_features", [])
         self.preprocessor: ColumnTransformer = self._create_preprocessor()
@@ -35,8 +37,13 @@ class DataPreparation:
         if initial_rows - deduped_rows > 0:
             logging.info(f"Removed {initial_rows - deduped_rows} duplicate rows.")
 
+        # Fill text column if missing
+        if self.text_feature in df_cleaned.columns:
+            df_cleaned[self.text_feature] = df_cleaned[self.text_feature].fillna("")
+
         for col in df_cleaned.select_dtypes(include=["object", "str"]).columns:
-            df_cleaned[col] = df_cleaned[col].astype(str).str.strip()
+            if col != self.text_feature:
+                df_cleaned[col] = df_cleaned[col].astype(str).str.strip()
 
         null_counts = df_cleaned.isnull().sum().sum()
         if null_counts > 0:
@@ -47,8 +54,13 @@ class DataPreparation:
         return df_cleaned
 
     def _create_preprocessor(self) -> ColumnTransformer:
-        logging.info("Creating Scikit-Learn ColumnTransformer preprocessor.")
+        logging.info("Creating Hybrid NLP + Tabular ColumnTransformer preprocessor.")
 
+        text_transformer = TfidfVectorizer(
+            max_features=500,
+            stop_words="english",
+            ngram_range=(1, 2)
+        )
         numerical_transformer = StandardScaler()
         categorical_transformer = OneHotEncoder(
             handle_unknown="ignore",
@@ -57,6 +69,7 @@ class DataPreparation:
 
         preprocessor = ColumnTransformer(
             transformers=[
+                ("text", text_transformer, self.text_feature),
                 ("num", numerical_transformer, self.numerical_features),
                 ("cat", categorical_transformer, self.nominal_features),
             ],
