@@ -1,6 +1,5 @@
-# PDF Learning Materials
+# PDF Files
 *.pdf
-AIAP_Foundation_Learning_Companion.pdf
 
 # Python virtual environment
 .venv/
@@ -16,6 +15,7 @@ __pycache__/
 # Jupyter checkpoint
 .ipynb_checkpoints/
 
-# Operating system files
+# Operating system / Office temp files
 .DS_Store
 Thumbs.db
+~$*

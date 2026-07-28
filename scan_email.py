@@ -1,6 +1,6 @@
 """
 Email Scanner Inference Script (Supports CLI text/file parsing)
-AIAP Cybersecurity - Detecting Phishing Emails
+Cybersecurity - Detecting Phishing Emails
 
 Scans emails by passing raw email text, uploading email files (.eml, .txt),
 or manually specifying feature parameters.
@@ -26,9 +26,6 @@ def load_scanner_model():
 
 
 def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dict:
-    """
-    Parses raw email text & sender email to extract model features.
-    """
     text = raw_text or ""
     sender = (sender_email or "").strip().lower()
 
@@ -131,7 +128,6 @@ def main():
         features = extract_features_from_raw_text(args.text, sender_email=args.sender)
         scan_email_dict(features)
     else:
-        # Interactive paste mode
         print("\nPaste raw email text below (press Ctrl+D or Ctrl+Z on new line when done):\n")
         try:
             content = sys.stdin.read()
