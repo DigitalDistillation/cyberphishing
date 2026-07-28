@@ -1,6 +1,6 @@
 """
 Streamlit Web Scanner App
-Cybersecurity - Detecting Phishing Emails (NLP + Tabular Machine Learning)
+Cybersecurity - Detecting Phishing Emails (NLP + Tabular Machine Learning Engine)
 """
 
 import os
@@ -33,7 +33,6 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     raw_sender = (sender_email or "").strip()
 
     email_match = re.search(r"[\w\.-]+@([\w\.-]+\.\w+)", raw_sender)
-
     email_length = len(text)
 
     url_pattern = r"https?://[^\s<>'\"]+|www\.[^\s<>'\"]+|<a\s+href="
@@ -67,11 +66,6 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
             sender_domain_type = "Suspicious/Spoofed"
         else:
             sender_domain_type = "Trusted/Corporate"
-    elif raw_sender:
-        if any(free in raw_sender.lower() for free in free_domains):
-            sender_domain_type = "Free-Webmail/Common Provider"
-        elif any(re.search(pat, raw_sender.lower()) for pat in suspicious_patterns):
-            sender_domain_type = "Suspicious/Spoofed"
 
     html_pattern = r"<html|<body|<p|<div|<a\s|<br"
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
@@ -90,19 +84,23 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
 
 model = load_model()
 
-st.title("🛡️ Cybersecurity – Phishing Email Scanner (NLP + ML Engine)")
+st.title("🛡️ Cybersecurity – Phishing Email Mass Scanner")
 st.markdown(
-    "Upload email files (`.eml`, `.txt`) or paste raw email text to scan with our hybrid NLP & tabular Machine Learning model."
+    "Pre-scan your emails before opening them. Audit single messages or run a **Batch Pre-Scan on past emails**."
 )
 
 if model is None:
     st.error("⚠️ Model file not found! Run `python main.py` to generate `models/phishing_detector.pkl`.")
     st.stop()
 
-tab1, tab2 = st.tabs(["📧 Scan Email (Upload or Paste Text)", "🎛️ Manual Feature Sliders"])
+tab1, tab2, tab3 = st.tabs([
+    "📧 Scan Email (Upload / Paste)",
+    "📥 Batch Mass Pre-Scanner",
+    "🎛️ Manual Feature Sliders"
+])
 
 with tab1:
-    st.subheader("Option A: Upload an Email File (.txt, .eml)")
+    st.subheader("Option A: Upload Email Files (.txt, .eml)")
     uploaded_file = st.file_uploader("Upload email file", type=["txt", "eml"])
 
     st.subheader("Option B: Paste Raw Email Content")
@@ -151,6 +149,49 @@ with tab1:
                 st.write(f"- **HTML Content**: `{features['html_content_flag']}`")
 
 with tab2:
+    st.subheader("📥 Mass Inbox Pre-Scanner (Batch Audit)")
+    st.markdown("Pre-scan multiple emails before opening them to verify safety.")
+
+    hours_back = st.slider("Select Scan Timeframe (Past Hours)", 1, 24, 1)
+
+    st.markdown("#### Upload Multiple Email Files for Batch Audit:")
+    uploaded_files = st.file_uploader("Upload multiple .eml / .txt files", type=["eml", "txt"], accept_multiple_files=True)
+
+    if st.button("🚀 Audit Batch Emails Now", type="primary"):
+        if not uploaded_files:
+            st.warning("Please upload email files to run batch clearance audit.")
+        else:
+            batch_results = []
+            for file in uploaded_files:
+                content = file.read().decode("utf-8", errors="ignore")
+                feats = extract_features_from_raw_text(content)
+                input_df = pd.DataFrame([feats])
+                
+                pred = model.predict(input_df)[0]
+                prob = model.predict_proba(input_df)[0][1] * 100
+                
+                status = "🚨 PHISHING THREAT" if pred == 1 else "✅ SAFE TO OPEN"
+                batch_results.append({
+                    "Filename": file.name,
+                    "Verdict": status,
+                    "Threat Probability": f"{prob:.1f}%",
+                    "Urgent Keywords": feats["presence_of_urgent_keywords"],
+                    "Links": feats["number_of_links"],
+                })
+
+            res_df = pd.DataFrame(batch_results)
+            
+            safe_count = sum(1 for r in batch_results if "SAFE" in r["Verdict"])
+            threat_count = sum(1 for r in batch_results if "PHISHING" in r["Verdict"])
+
+            m1, m2, m3 = st.columns(3)
+            m1.metric("Total Emails Scanned", len(batch_results))
+            m2.metric("✅ Safe to Open", safe_count)
+            m3.metric("🚨 Phishing Blocked", threat_count)
+
+            st.dataframe(res_df, use_container_width=True)
+
+with tab3:
     st.subheader("Manual Feature Specification")
     c1, c2 = st.columns(2)
 
