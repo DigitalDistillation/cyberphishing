@@ -10,7 +10,6 @@ import pandas as pd
 import joblib
 
 MODEL_PATH = "models/phishing_detector.pkl"
-PHISHING_THRESHOLD = 0.78  # Realistic threshold (78%) to eliminate false positives on casual emails
 
 st.set_page_config(
     page_title="Cybersecurity - Phishing Email Scanner",
@@ -19,8 +18,8 @@ st.set_page_config(
 )
 
 
-@st.cache_resource
 def load_model():
+    """Load trained pipeline model directly without stale caching."""
     if not os.path.exists(MODEL_PATH):
         return None
     return joblib.load(MODEL_PATH)
@@ -65,6 +64,11 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
             sender_domain_type = "Suspicious/Spoofed"
         else:
             sender_domain_type = "Trusted/Corporate"
+    elif raw_sender:
+        if any(free in raw_sender.lower() for free in free_domains):
+            sender_domain_type = "Free-Webmail/Common Provider"
+        elif any(re.search(pat, raw_sender.lower()) for pat in suspicious_patterns):
+            sender_domain_type = "Suspicious/Spoofed"
 
     html_pattern = r"<html|<body|<p|<div|<a\s|<br|sq\s*\d+|booking|flight|itinerary"
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
@@ -123,19 +127,16 @@ with tab1:
 
             with col2:
                 st.subheader("🛡️ Scan Result")
+                pred = model.predict(input_df)[0]
                 prob = model.predict_proba(input_df)[0]
                 phishing_prob = float(prob[1])
                 legit_prob = float(prob[0])
 
-                if phishing_prob >= PHISHING_THRESHOLD:
-                    st.error(f"🚨 **HIGH RISK: PHISHING DETECTED** (Probability: {phishing_prob * 100:.1f}%)")
+                if pred == 1 and phishing_prob >= 0.5:
+                    st.error(f"🚨 **PHISHING DETECTED** (Risk Probability: {phishing_prob * 100:.1f}%)")
                     st.progress(phishing_prob)
-                elif phishing_prob >= 0.65:
-                    st.warning(f"🟡 **LOW RISK / SUSPICIOUS** (Probability: {phishing_prob * 100:.1f}%)")
-                    st.progress(phishing_prob)
-                    st.info("Note: Casual short email from a free webmail provider.")
                 else:
-                    st.success(f"✅ **LEGITIMATE EMAIL** (Probability: {legit_prob * 100:.1f}%)")
+                    st.success(f"✅ **LEGITIMATE EMAIL** (Confidence: {legit_prob * 100:.1f}%)")
                     st.progress(legit_prob)
 
                 st.markdown("### Feature Breakdown:")
@@ -172,9 +173,10 @@ with tab2:
     )
 
     if st.button("Scan Manual Features"):
+        m_pred = model.predict(manual_df)[0]
         m_prob = model.predict_proba(manual_df)[0][1]
 
-        if m_prob >= PHISHING_THRESHOLD:
+        if m_pred == 1:
             st.error(f"🚨 **PHISHING DETECTED** ({m_prob * 100:.1f}%)")
         else:
             st.success(f"✅ **LEGITIMATE EMAIL** ({(1 - m_prob) * 100:.1f}%)")
