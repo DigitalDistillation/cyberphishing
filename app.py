@@ -10,6 +10,7 @@ import pandas as pd
 import joblib
 
 MODEL_PATH = "models/phishing_detector.pkl"
+PHISHING_THRESHOLD = 0.78  # Realistic threshold (78%) to eliminate false positives on casual emails
 
 st.set_page_config(
     page_title="Cybersecurity - Phishing Email Scanner",
@@ -29,8 +30,6 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     text = raw_text or ""
     raw_sender = (sender_email or "").strip()
 
-    # Extract clean email address if formatted as "Name <email@domain.com>"
-    sender = raw_sender.lower()
     email_match = re.search(r"[\w\.-]+@([\w\.-]+\.\w+)", raw_sender)
 
     email_length = len(text)
@@ -44,22 +43,18 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     number_of_attachments = len(attachments)
 
     urgent_words = [
-        "urgent",
-        "immediately",
         "account suspended",
         "verify your password",
-        "action required",
-        "security alert",
-        "unauthorized access",
-        "bank",
-        "confirm your identity",
-        "24 hours",
+        "action required immediately",
+        "unauthorized access detected",
+        "confirm your credit card",
+        "24 hours to verify",
     ]
     has_urgent = any(w in text.lower() for w in urgent_words)
     presence_of_urgent_keywords = "Present" if has_urgent else "Absent"
 
     free_domains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com"]
-    suspicious_patterns = [r"verify", r"security", r"update", r"support-", r"service-", r"account-", r"login", r"secure"]
+    suspicious_patterns = [r"verify", r"security-alert", r"update-account", r"support-", r"login-page", r"secure-bank"]
 
     sender_domain_type = "Trusted/Corporate"
     if email_match:
@@ -70,11 +65,6 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
             sender_domain_type = "Suspicious/Spoofed"
         else:
             sender_domain_type = "Trusted/Corporate"
-    elif sender:
-        if any(free in sender for free in free_domains):
-            sender_domain_type = "Free-Webmail/Common Provider"
-        elif any(re.search(pat, sender) for pat in suspicious_patterns):
-            sender_domain_type = "Suspicious/Spoofed"
 
     html_pattern = r"<html|<body|<p|<div|<a\s|<br|sq\s*\d+|booking|flight|itinerary"
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
@@ -108,7 +98,7 @@ with tab1:
     uploaded_file = st.file_uploader("Upload email file", type=["txt", "eml"])
 
     st.subheader("Option B: Paste Raw Email Content")
-    sender_input = st.text_input("Sender Email Address (Optional, e.g. KrisFlyer <singaporeair@email.singaporeair.com>)")
+    sender_input = st.text_input("Sender Email Address (Optional, e.g. john@hotmail.com)")
     email_text = st.text_area("Paste Full Email Text Here:", height=200)
 
     raw_text_to_process = ""
@@ -133,20 +123,22 @@ with tab1:
 
             with col2:
                 st.subheader("🛡️ Scan Result")
-                pred = model.predict(input_df)[0]
                 prob = model.predict_proba(input_df)[0]
-
                 phishing_prob = float(prob[1])
                 legit_prob = float(prob[0])
 
-                if pred == 1:
-                    st.error(f"🚨 **PHISHING DETECTED** (Probability: {phishing_prob * 100:.1f}%)")
+                if phishing_prob >= PHISHING_THRESHOLD:
+                    st.error(f"🚨 **HIGH RISK: PHISHING DETECTED** (Probability: {phishing_prob * 100:.1f}%)")
                     st.progress(phishing_prob)
+                elif phishing_prob >= 0.65:
+                    st.warning(f"🟡 **LOW RISK / SUSPICIOUS** (Probability: {phishing_prob * 100:.1f}%)")
+                    st.progress(phishing_prob)
+                    st.info("Note: Casual short email from a free webmail provider.")
                 else:
                     st.success(f"✅ **LEGITIMATE EMAIL** (Probability: {legit_prob * 100:.1f}%)")
                     st.progress(legit_prob)
 
-                st.markdown("### Feature Insights:")
+                st.markdown("### Feature Breakdown:")
                 st.write(f"- **Sender Domain**: `{features['sender_domain_type']}`")
                 st.write(f"- **Urgent Keywords**: `{features['presence_of_urgent_keywords']}`")
                 st.write(f"- **Links Count**: `{features['number_of_links']}`")
@@ -180,13 +172,12 @@ with tab2:
     )
 
     if st.button("Scan Manual Features"):
-        m_pred = model.predict(manual_df)[0]
-        m_prob = model.predict_proba(manual_df)[0]
+        m_prob = model.predict_proba(manual_df)[0][1]
 
-        if m_pred == 1:
-            st.error(f"🚨 **PHISHING DETECTED** ({m_prob[1] * 100:.1f}%)")
+        if m_prob >= PHISHING_THRESHOLD:
+            st.error(f"🚨 **PHISHING DETECTED** ({m_prob * 100:.1f}%)")
         else:
-            st.success(f"✅ **LEGITIMATE EMAIL** ({m_prob[0] * 100:.1f}%)")
+            st.success(f"✅ **LEGITIMATE EMAIL** ({(1 - m_prob) * 100:.1f}%)")
 
 st.markdown("---")
 st.caption("Cybersecurity Phishing Detection Project")

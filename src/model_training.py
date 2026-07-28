@@ -108,17 +108,17 @@ class ModelTraining:
         X_val: pd.DataFrame,
         y_val: pd.Series,
     ) -> Tuple[Dict[str, Pipeline], Dict[str, Dict[str, Any]]]:
-        logging.info("Training and evaluating baseline models...")
+        logging.info("Training and evaluating unweighted baseline models...")
 
         baseline_classifiers = {
             "Logistic Regression (Baseline)": LogisticRegression(
-                random_state=self.random_state, class_weight="balanced"
+                random_state=self.random_state, class_weight=None
             ),
             "Decision Tree (Baseline)": DecisionTreeClassifier(
-                random_state=self.random_state, class_weight="balanced"
+                random_state=self.random_state, class_weight=None
             ),
             "Random Forest (Baseline)": RandomForestClassifier(
-                random_state=self.random_state, class_weight="balanced"
+                random_state=self.random_state, class_weight=None
             ),
             "KNN (Baseline)": KNeighborsClassifier(n_neighbors=5),
         }
