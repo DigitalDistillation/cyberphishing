@@ -27,7 +27,11 @@ def load_model():
 
 def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dict:
     text = raw_text or ""
-    sender = (sender_email or "").strip().lower()
+    raw_sender = (sender_email or "").strip()
+
+    # Extract clean email address if formatted as "Name <email@domain.com>"
+    sender = raw_sender.lower()
+    email_match = re.search(r"[\w\.-]+@([\w\.-]+\.\w+)", raw_sender)
 
     email_length = len(text)
 
@@ -54,21 +58,25 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     has_urgent = any(w in text.lower() for w in urgent_words)
     presence_of_urgent_keywords = "Present" if has_urgent else "Absent"
 
-    free_domains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "aol.com"]
+    free_domains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com"]
     suspicious_patterns = [r"verify", r"security", r"update", r"support-", r"service-", r"account-", r"login", r"secure"]
 
     sender_domain_type = "Trusted/Corporate"
-    if sender:
-        domain = sender.split("@")[-1] if "@" in sender else sender
-        if domain in free_domains:
+    if email_match:
+        domain = email_match.group(1).lower()
+        if any(domain.endswith(free) for free in free_domains):
             sender_domain_type = "Free-Webmail/Common Provider"
         elif any(re.search(pat, domain) for pat in suspicious_patterns):
             sender_domain_type = "Suspicious/Spoofed"
-    else:
-        if has_urgent and number_of_links > 2:
+        else:
+            sender_domain_type = "Trusted/Corporate"
+    elif sender:
+        if any(free in sender for free in free_domains):
+            sender_domain_type = "Free-Webmail/Common Provider"
+        elif any(re.search(pat, sender) for pat in suspicious_patterns):
             sender_domain_type = "Suspicious/Spoofed"
 
-    html_pattern = r"<html|<body|<p|<div|<a\s|<br"
+    html_pattern = r"<html|<body|<p|<div|<a\s|<br|sq\s*\d+|booking|flight|itinerary"
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
     html_content_flag = "Present" if is_html else "Absent"
 
@@ -100,7 +108,7 @@ with tab1:
     uploaded_file = st.file_uploader("Upload email file", type=["txt", "eml"])
 
     st.subheader("Option B: Paste Raw Email Content")
-    sender_input = st.text_input("Sender Email Address (Optional)")
+    sender_input = st.text_input("Sender Email Address (Optional, e.g. KrisFlyer <singaporeair@email.singaporeair.com>)")
     email_text = st.text_area("Paste Full Email Text Here:", height=200)
 
     raw_text_to_process = ""
@@ -137,6 +145,12 @@ with tab1:
                 else:
                     st.success(f"✅ **LEGITIMATE EMAIL** (Probability: {legit_prob * 100:.1f}%)")
                     st.progress(legit_prob)
+
+                st.markdown("### Feature Insights:")
+                st.write(f"- **Sender Domain**: `{features['sender_domain_type']}`")
+                st.write(f"- **Urgent Keywords**: `{features['presence_of_urgent_keywords']}`")
+                st.write(f"- **Links Count**: `{features['number_of_links']}`")
+                st.write(f"- **HTML Content**: `{features['html_content_flag']}`")
 
 with tab2:
     st.subheader("Manual Feature Specification")
