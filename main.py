@@ -27,7 +27,7 @@ logging.basicConfig(
 
 @ignore_warnings(category=Warning)
 def main() -> None:
-    logging.info("Starting Phishing Email Classification Pipeline...")
+    logging.info("Starting Precision-Tuned Phishing Email Classification Pipeline...")
 
     config_path = "./src/config.yaml"
     with open(config_path, "r") as f:
@@ -53,10 +53,11 @@ def main() -> None:
     all_models = {**baseline_models, **tuned_models}
     all_metrics = {**baseline_metrics, **tuned_metrics}
 
-    best_model_name = max(all_metrics, key=lambda k: all_metrics[k]["F1"])
+    # Select best model based on Precision
+    best_model_name = max(all_metrics, key=lambda k: all_metrics[k]["Precision"])
     best_model = all_models[best_model_name]
 
-    logging.info(f"=== Best Model Selected: '{best_model_name}' ===")
+    logging.info(f"=== Best Precision Model Selected: '{best_model_name}' ===")
 
     final_metrics = model_training.evaluate_final_model(
         best_model, X_test, y_test, best_model_name
@@ -65,7 +66,7 @@ def main() -> None:
     os.makedirs("models", exist_ok=True)
     model_path = "models/phishing_detector.pkl"
     joblib.dump(best_model, model_path)
-    logging.info(f"Saved trained model to '{model_path}'")
+    logging.info(f"Saved precision-tuned model to '{model_path}'")
 
 
 if __name__ == "__main__":

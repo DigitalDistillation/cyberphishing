@@ -999,3 +999,53 @@ email_length,number_of_links,number_of_attachments,presence_of_urgent_keywords,s
 415.71,1.01,0.265,Absent,Suspicious/Spoofed,Present,Legitimate
 2364.6,0.424,0.256,Absent,Trusted/Corporate,Present,Phishing
 679.94,1.43,0.563,Absent,Free-Webmail/Common Provider,Present,Phishing
+103.02,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+187.02,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+51.66,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+28.65,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+156.26,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+19.84,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+210.62,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+57.73,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+86.5,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+116.51,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+158.79,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+83.65,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+122.18,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+61.92,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+154.22,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+157.77,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+30.29,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+241.92,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+86.58,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+175.79,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+43.68,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+23.08,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+75.81,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+88.25,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+143.48,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+242.85,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+235.78,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+155.51,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+35.8,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+25.63,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+106.34,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+209.75,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+81.02,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+48.12,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+32.52,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+196.48,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+16.3,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+181.11,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+196.25,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+99.24,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+217.83,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+92.76,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+88.08,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+186.46,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+223.49,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+43.1,0.0,0.0,Absent,Trusted/Corporate,Absent,Legitimate
+193.78,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+196.18,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+137.84,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+20.97,0.0,0.0,Absent,Free-Webmail/Common Provider,Absent,Legitimate

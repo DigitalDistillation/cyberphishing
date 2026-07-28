@@ -3,7 +3,7 @@ Model Training Module
 Cybersecurity - Detecting Phishing Emails
 
 This module defines the ModelTraining class responsible for stratified data splitting,
-baseline model training, hyperparameter tuning with GridSearchCV, and metrics evaluation.
+precision-focused hyperparameter tuning with GridSearchCV, and metrics evaluation.
 """
 
 import logging
@@ -25,6 +25,8 @@ from sklearn.metrics import (
     f1_score,
     roc_auc_score,
     confusion_matrix,
+    make_scorer,
+    fbeta_score,
 )
 
 
@@ -112,15 +114,15 @@ class ModelTraining:
 
         baseline_classifiers = {
             "Logistic Regression (Baseline)": LogisticRegression(
-                random_state=self.random_state, class_weight=None
+                random_state=self.random_state, C=0.1, class_weight=None
             ),
             "Decision Tree (Baseline)": DecisionTreeClassifier(
-                random_state=self.random_state, class_weight=None
+                random_state=self.random_state, max_depth=5, min_samples_leaf=5, class_weight=None
             ),
             "Random Forest (Baseline)": RandomForestClassifier(
-                random_state=self.random_state, class_weight=None
+                random_state=self.random_state, max_depth=5, min_samples_leaf=5, class_weight=None
             ),
-            "KNN (Baseline)": KNeighborsClassifier(n_neighbors=5),
+            "KNN (Baseline)": KNeighborsClassifier(n_neighbors=7),
         }
 
         models = {}
@@ -154,11 +156,13 @@ class ModelTraining:
         X_val: pd.DataFrame,
         y_val: pd.Series,
     ) -> Tuple[Dict[str, Pipeline], Dict[str, Dict[str, Any]]]:
-        logging.info("Training and tuning models with GridSearchCV...")
+        logging.info("Training and tuning models with GridSearchCV (Precision Focused)...")
 
         param_grids = self.config.get("param_grids", {})
         cv = self.config.get("cv", 5)
-        scoring = self.config.get("scoring", "f1")
+
+        # Precision F0.5 Scorer to strictly penalize False Positives
+        f05_scorer = make_scorer(fbeta_score, beta=0.5)
 
         algorithm_map = {
             "LogisticRegression": LogisticRegression(random_state=self.random_state),
@@ -186,7 +190,7 @@ class ModelTraining:
                 estimator=pipeline,
                 param_grid=param_grid,
                 cv=cv,
-                scoring=scoring,
+                scoring=f05_scorer,
                 n_jobs=-1,
             )
 
@@ -200,7 +204,7 @@ class ModelTraining:
 
             logging.info(
                 f"{model_name} Best Params: {grid_search.best_params_} | "
-                f"Val F1: {val_metrics['F1']:.4f}, ROC-AUC: {val_metrics['ROC-AUC']:.4f}"
+                f"Val Precision: {val_metrics['Precision']:.4f}, F1: {val_metrics['F1']:.4f}, ROC-AUC: {val_metrics['ROC-AUC']:.4f}"
             )
 
         return tuned_models, tuned_metrics
