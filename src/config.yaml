@@ -1,0 +1,55 @@
+# AIAP Cybersecurity Phishing Detection Configuration
+
+# File Paths & Data Setup
+file_path: "./data/data.csv"
+target_column: "phishing_email"
+
+# Data Splitting Parameters
+# val_test_size: Proportion of overall dataset split into (validation + test)
+# val_size: Proportion of (validation + test) assigned to validation (e.g. 0.5 means equal split)
+val_test_size: 0.3
+val_size: 0.5
+random_state: 42
+
+# Target Class Mapping (Categorical String -> Integer Label)
+target_mapping:
+  Legitimate: 0
+  Phishing: 1
+
+# Feature Specifications
+numerical_features:
+  - email_length
+  - number_of_links
+  - number_of_attachments
+
+nominal_features:
+  - presence_of_urgent_keywords
+  - sender_domain_type
+  - html_content_flag
+
+# Cross-Validation & Tuning Settings
+cv: 5
+scoring: "f1"
+
+# Model Hyperparameter Tuning Grids
+param_grids:
+  LogisticRegression:
+    classifier__C: [0.01, 0.1, 1.0, 10.0]
+    classifier__penalty: ["l2"]
+    classifier__solver: ["lbfgs"]
+    classifier__class_weight: ["balanced", None]
+
+  DecisionTree:
+    classifier__max_depth: [3, 5, 10, null]
+    classifier__criterion: ["gini", "entropy"]
+    classifier__class_weight: ["balanced", null]
+
+  RandomForest:
+    classifier__n_estimators: [50, 100, 200]
+    classifier__max_depth: [null, 5, 10]
+    classifier__min_samples_split: [2, 5]
+    classifier__class_weight: ["balanced", null]
+
+  KNN:
+    classifier__n_neighbors: [3, 5, 7, 9]
+    classifier__weights: ["uniform", "distance"]

@@ -1,0 +1,1001 @@
+email_length,number_of_links,number_of_attachments,presence_of_urgent_keywords,sender_domain_type,html_content_flag,phishing_email
+1091.99,0.896,0.0864,Absent,Suspicious/Spoofed,Present,Legitimate
+2110.22,4.02,0.88,Absent,Trusted/Corporate,Absent,Phishing
+242.89,1.79,0.908,Absent,Free-Webmail/Common Provider,Present,Legitimate
+960.16,1.06,0.029,Absent,Trusted/Corporate,Present,Legitimate
+713.57,1.25,0.0415,Absent,Suspicious/Spoofed,Present,Legitimate
+1495.45,3.73,0.244,Absent,Trusted/Corporate,Present,Legitimate
+499.61,1.21,0.327,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1261.82,3.61,0.0511,Absent,Suspicious/Spoofed,Present,Legitimate
+2681.97,1.32,0.462,Absent,Trusted/Corporate,Absent,Phishing
+1766.45,1.43,0.00645,Absent,Free-Webmail/Common Provider,Present,Legitimate
+461.73,3.17,2.04,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1231.31,1.66,0.0591,Present,Trusted/Corporate,Present,Phishing
+618.4,3.91,0.18,Present,Suspicious/Spoofed,Present,Legitimate
+1508.84,3.52,0.223,Present,Trusted/Corporate,Present,Legitimate
+3635.47,1.45,0.00432,Present,Trusted/Corporate,Absent,Phishing
+253.24,3.62,0.0378,Absent,Trusted/Corporate,Present,Phishing
+468.34,2.57,0.161,Absent,Trusted/Corporate,Present,Legitimate
+204.42,0.197,0.504,Present,Free-Webmail/Common Provider,Present,Phishing
+2956.29,2.98,2.25,Present,Free-Webmail/Common Provider,Present,Phishing
+422.77,1.64,0.00092,Present,Trusted/Corporate,Present,Phishing
+525.41,4.43,0.102,Present,Free-Webmail/Common Provider,Present,Phishing
+1202.43,1.99,0.521,Absent,Trusted/Corporate,Present,Legitimate
+626.17,2.31,0.154,Absent,Trusted/Corporate,Present,Legitimate
+623.96,5.05,1.35,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1711.59,4.19,0.142,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+201.69,2.55,0.296,Absent,Trusted/Corporate,Present,Phishing
+337.22,1.8,0.44,Absent,Suspicious/Spoofed,Present,Legitimate
+226.01,1.84,0.0472,Absent,Trusted/Corporate,Present,Phishing
+348.49,1.63,0.422,Present,Trusted/Corporate,Absent,Phishing
+1696.78,2.94,0.565,Absent,Free-Webmail/Common Provider,Present,Legitimate
+315.75,0.778,1.42,Present,Suspicious/Spoofed,Present,Legitimate
+2590.76,0.739,0.0213,Absent,Trusted/Corporate,Present,Phishing
+550.52,1.11,1.86e-05,Absent,Trusted/Corporate,Present,Phishing
+376.39,1.39,0.542,Present,Suspicious/Spoofed,Present,Legitimate
+505.52,4.15,0.226,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+546.13,2.15,0.606,Absent,Trusted/Corporate,Present,Legitimate
+2063.21,3.52,2.56,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1966.38,0.382,0.441,Present,Free-Webmail/Common Provider,Present,Phishing
+296.0,1.95,0.525,Absent,Trusted/Corporate,Present,Phishing
+304.44,0.469,0.796,Present,Free-Webmail/Common Provider,Absent,Legitimate
+1250.98,4.53,0.777,Absent,Trusted/Corporate,Present,Legitimate
+975.59,1.73,1.62,Absent,Trusted/Corporate,Present,Legitimate
+227.38,4.15,0.0791,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1416.35,4.91,0.0803,Absent,Trusted/Corporate,Present,Phishing
+265.7,1.4,0.0268,Present,Trusted/Corporate,Absent,Phishing
+704.88,2.11,0.737,Present,Trusted/Corporate,Present,Phishing
+366.66,1.2,0.179,Absent,Trusted/Corporate,Present,Phishing
+1326.27,4.31,0.319,Absent,Suspicious/Spoofed,Present,Legitimate
+451.31,1.47,1.26,Absent,Trusted/Corporate,Present,Legitimate
+819.13,3.18,0.104,Absent,Suspicious/Spoofed,Present,Legitimate
+451.45,1.67,0.0089,Absent,Free-Webmail/Common Provider,Present,Legitimate
+531.44,1.61,0.338,Present,Trusted/Corporate,Present,Phishing
+895.63,3.83,2.18,Present,Trusted/Corporate,Present,Legitimate
+934.3,2.86,0.337,Absent,Free-Webmail/Common Provider,Present,Legitimate
+488.71,1.0,0.519,Present,Trusted/Corporate,Present,Phishing
+2294.48,3.18,0.596,Absent,Trusted/Corporate,Present,Legitimate
+768.21,4.58,0.258,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1151.43,1.8,0.115,Present,Free-Webmail/Common Provider,Present,Legitimate
+589.15,3.23,0.699,Absent,Trusted/Corporate,Present,Legitimate
+843.24,2.43,0.0442,Absent,Trusted/Corporate,Present,Legitimate
+566.73,2.43,1.43,Absent,Trusted/Corporate,Present,Legitimate
+1873.33,2.06,0.0762,Absent,Trusted/Corporate,Present,Legitimate
+317.48,3.95,0.365,Absent,Suspicious/Spoofed,Present,Legitimate
+1044.34,4.74,0.12,Present,Trusted/Corporate,Present,Phishing
+375.52,2.69,1.82,Present,Free-Webmail/Common Provider,Present,Legitimate
+225.35,2.1,1.0,Absent,Free-Webmail/Common Provider,Present,Legitimate
+682.65,0.784,0.0832,Present,Trusted/Corporate,Present,Phishing
+401.74,1.53,0.11,Absent,Suspicious/Spoofed,Absent,Legitimate
+1979.73,1.09,0.719,Absent,Trusted/Corporate,Present,Legitimate
+270.34,0.733,1.27,Absent,Trusted/Corporate,Present,Phishing
+417.6,2.7,1.3,Present,Trusted/Corporate,Present,Legitimate
+85.43,1.15,0.664,Absent,Suspicious/Spoofed,Present,Legitimate
+286.62,4.26,0.0614,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1627.8,2.48,0.113,Absent,Trusted/Corporate,Present,Legitimate
+1135.79,1.9,0.387,Present,Trusted/Corporate,Present,Legitimate
+797.69,2.87,0.135,Present,Trusted/Corporate,Present,Phishing
+2361.6,5.59,0.0398,Present,Free-Webmail/Common Provider,Present,Phishing
+5317.2,3.06,0.137,Present,Trusted/Corporate,Present,Legitimate
+436.56,3.31,0.529,Absent,Suspicious/Spoofed,Present,Legitimate
+581.44,0.932,0.657,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1205.28,2.18,0.0881,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1266.91,0.413,0.0224,Absent,Trusted/Corporate,Present,Phishing
+708.08,1.6,0.294,Present,Trusted/Corporate,Absent,Phishing
+1316.68,0.946,0.713,Absent,Trusted/Corporate,Absent,Legitimate
+1276.52,3.76,1.1,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1384.54,2.97,1.29,Absent,Trusted/Corporate,Present,Legitimate
+692.68,2.4,0.486,Absent,Trusted/Corporate,Present,Legitimate
+1101.97,0.215,1.09,Absent,Trusted/Corporate,Present,Legitimate
+399.76,0.783,0.0271,Absent,Trusted/Corporate,Absent,Phishing
+671.38,2.31,0.0219,Present,Trusted/Corporate,Absent,Phishing
+736.16,3.67,0.00955,Present,Trusted/Corporate,Present,Legitimate
+536.85,1.38,0.0532,Absent,Trusted/Corporate,Present,Legitimate
+171.97,3.61,0.476,Present,Trusted/Corporate,Present,Legitimate
+468.2,0.546,0.188,Present,Suspicious/Spoofed,Absent,Phishing
+416.41,1.53,0.716,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2581.78,2.28,0.335,Present,Trusted/Corporate,Absent,Phishing
+378.92,0.972,0.426,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1081.79,4.87,1.65,Absent,Trusted/Corporate,Present,Legitimate
+917.13,2.02,0.718,Present,Suspicious/Spoofed,Present,Legitimate
+642.81,6.97,1.03,Absent,Free-Webmail/Common Provider,Present,Legitimate
+248.49,0.372,0.18,Present,Trusted/Corporate,Present,Phishing
+603.69,4.54,0.166,Absent,Trusted/Corporate,Present,Legitimate
+715.27,0.875,0.59,Present,Free-Webmail/Common Provider,Present,Legitimate
+825.61,2.88,0.775,Absent,Free-Webmail/Common Provider,Present,Legitimate
+585.76,0.984,0.0578,Present,Free-Webmail/Common Provider,Present,Phishing
+222.19,5.32,0.78,Present,Free-Webmail/Common Provider,Absent,Legitimate
+500.93,1.09,0.0323,Absent,Suspicious/Spoofed,Present,Phishing
+394.03,1.47,0.22,Present,Free-Webmail/Common Provider,Present,Legitimate
+831.32,4.9,0.131,Present,Trusted/Corporate,Present,Legitimate
+707.66,1.42,0.00102,Absent,Free-Webmail/Common Provider,Present,Legitimate
+200.97,1.22,0.189,Absent,Trusted/Corporate,Present,Phishing
+483.37,1.41,1.27,Present,Free-Webmail/Common Provider,Absent,Phishing
+1972.88,3.15,0.0259,Absent,Free-Webmail/Common Provider,Present,Legitimate
+3414.26,2.53,0.0929,Absent,Trusted/Corporate,Present,Legitimate
+655.88,2.79,0.658,Absent,Trusted/Corporate,Present,Legitimate
+1070.69,2.79,0.0132,Absent,Trusted/Corporate,Present,Legitimate
+276.31,3.94,0.00166,Absent,Trusted/Corporate,Present,Phishing
+5749.85,7.0,0.299,Absent,Trusted/Corporate,Present,Legitimate
+1649.62,5.23,0.222,Present,Free-Webmail/Common Provider,Present,Legitimate
+758.66,4.74,0.844,Absent,Suspicious/Spoofed,Present,Legitimate
+144.79,1.64,0.00337,Absent,Free-Webmail/Common Provider,Absent,Phishing
+1639.19,2.15,0.0202,Absent,Trusted/Corporate,Present,Phishing
+903.73,3.94,0.334,Absent,Free-Webmail/Common Provider,Present,Legitimate
+466.18,4.82,0.295,Absent,Free-Webmail/Common Provider,Present,Legitimate
+409.09,3.08,0.00051,Absent,Free-Webmail/Common Provider,Present,Legitimate
+747.65,2.44,1.18,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+585.17,1.87,0.0107,Present,Free-Webmail/Common Provider,Absent,Legitimate
+940.66,4.22,0.426,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+204.22,2.88,0.00321,Absent,Trusted/Corporate,Present,Phishing
+669.39,2.09,0.00124,Present,Trusted/Corporate,Absent,Phishing
+2458.91,5.34,0.625,Absent,Trusted/Corporate,Present,Legitimate
+612.92,1.91,1.51,Absent,Trusted/Corporate,Present,Legitimate
+186.42,5.52,0.0789,Absent,Free-Webmail/Common Provider,Present,Legitimate
+373.83,4.49,0.141,Absent,Suspicious/Spoofed,Present,Legitimate
+198.03,3.62,0.764,Present,Suspicious/Spoofed,Absent,Legitimate
+2299.33,1.7,3.53,Present,Trusted/Corporate,Absent,Legitimate
+514.26,0.735,0.985,Absent,Trusted/Corporate,Present,Legitimate
+1186.12,4.04,0.098,Absent,Trusted/Corporate,Present,Legitimate
+248.54,2.46,0.275,Absent,Free-Webmail/Common Provider,Present,Legitimate
+428.82,0.72,0.757,Absent,Trusted/Corporate,Present,Legitimate
+654.53,2.58,0.106,Absent,Trusted/Corporate,Present,Legitimate
+343.27,4.18,1.55,Absent,Free-Webmail/Common Provider,Present,Legitimate
+251.98,1.62,0.0468,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+975.67,0.283,0.041,Present,Trusted/Corporate,Present,Phishing
+588.91,3.38,0.203,Present,Suspicious/Spoofed,Present,Legitimate
+274.66,3.64,0.301,Absent,Free-Webmail/Common Provider,Present,Legitimate
+220.9,3.83,0.0103,Absent,Suspicious/Spoofed,Present,Legitimate
+1370.84,3.41,0.161,Absent,Free-Webmail/Common Provider,Present,Phishing
+527.59,4.01,0.138,Absent,Free-Webmail/Common Provider,Present,Legitimate
+431.44,1.3,0.407,Present,Free-Webmail/Common Provider,Present,Phishing
+964.0,2.33,0.0987,Absent,Trusted/Corporate,Present,Phishing
+523.57,1.25,0.00146,Absent,Free-Webmail/Common Provider,Present,Phishing
+655.92,2.03,0.887,Absent,Trusted/Corporate,Present,Legitimate
+2077.05,2.27,0.1,Present,Suspicious/Spoofed,Present,Phishing
+606.58,1.05,5.21,Present,Trusted/Corporate,Present,Legitimate
+1399.87,2.45,0.298,Absent,Free-Webmail/Common Provider,Present,Legitimate
+545.21,2.88,0.329,Absent,Trusted/Corporate,Absent,Phishing
+818.83,0.452,0.505,Present,Trusted/Corporate,Present,Phishing
+423.81,3.67,1.61,Absent,Free-Webmail/Common Provider,Present,Legitimate
+398.63,1.36,0.225,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1999.75,3.82,1.44,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1475.25,3.08,0.376,Present,Free-Webmail/Common Provider,Absent,Legitimate
+992.24,1.49,0.132,Absent,Trusted/Corporate,Present,Legitimate
+296.89,1.64,0.309,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1198.59,0.947,0.326,Absent,Trusted/Corporate,Present,Legitimate
+288.53,1.55,3.91,Present,Free-Webmail/Common Provider,Present,Legitimate
+912.81,2.61,0.429,Absent,Suspicious/Spoofed,Present,Legitimate
+622.64,2.44,0.123,Absent,Free-Webmail/Common Provider,Present,Legitimate
+219.97,1.23,0.155,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+410.53,2.09,0.633,Absent,Trusted/Corporate,Absent,Phishing
+980.34,5.11,0.322,Present,Free-Webmail/Common Provider,Present,Legitimate
+691.62,1.18,0.122,Present,Trusted/Corporate,Present,Phishing
+415.43,1.15,0.833,Absent,Free-Webmail/Common Provider,Present,Phishing
+925.01,5.1,0.458,Absent,Trusted/Corporate,Present,Legitimate
+179.33,5.98,0.0283,Absent,Suspicious/Spoofed,Present,Legitimate
+1032.54,3.06,1.1,Absent,Trusted/Corporate,Absent,Legitimate
+537.05,4.46,0.295,Absent,Trusted/Corporate,Present,Legitimate
+360.15,0.382,0.098,Present,Free-Webmail/Common Provider,Present,Phishing
+1302.61,1.53,0.315,Absent,Trusted/Corporate,Present,Legitimate
+1051.65,1.5,1.21,Present,Free-Webmail/Common Provider,Present,Legitimate
+839.13,1.12,0.386,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+222.87,4.07,0.0709,Absent,Trusted/Corporate,Present,Legitimate
+1043.03,0.599,0.0207,Present,Trusted/Corporate,Present,Legitimate
+471.14,0.589,0.000527,Present,Trusted/Corporate,Present,Phishing
+1990.33,3.44,0.2,Absent,Trusted/Corporate,Present,Phishing
+376.67,2.83,0.2,Absent,Trusted/Corporate,Absent,Legitimate
+921.91,2.78,0.264,Absent,Trusted/Corporate,Absent,Phishing
+238.62,1.86,0.145,Absent,Trusted/Corporate,Absent,Phishing
+597.69,0.758,0.265,Present,Trusted/Corporate,Present,Phishing
+618.83,1.2,1.26,Absent,Trusted/Corporate,Present,Legitimate
+2291.9,1.08,0.626,Absent,Trusted/Corporate,Present,Legitimate
+695.63,2.37,1.97,Absent,Trusted/Corporate,Present,Legitimate
+505.16,0.862,0.602,Absent,Trusted/Corporate,Present,Legitimate
+1100.35,1.52,0.0741,Present,Trusted/Corporate,Present,Phishing
+3869.1,3.09,0.00392,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2293.0,2.68,1.59,Present,Free-Webmail/Common Provider,Absent,Legitimate
+612.18,0.57,0.00498,Present,Trusted/Corporate,Present,Phishing
+636.81,1.62,0.0091,Present,Suspicious/Spoofed,Present,Legitimate
+1366.14,0.974,1.56,Absent,Trusted/Corporate,Present,Legitimate
+145.77,0.474,2.35,Present,Trusted/Corporate,Present,Phishing
+3429.17,2.92,1.27,Present,Trusted/Corporate,Present,Legitimate
+964.62,4.47,0.748,Absent,Free-Webmail/Common Provider,Present,Legitimate
+502.25,3.69,0.267,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1027.68,6.34,0.00826,Absent,Suspicious/Spoofed,Present,Legitimate
+361.4,1.84,0.805,Absent,Free-Webmail/Common Provider,Present,Legitimate
+279.23,3.58,0.0756,Present,Suspicious/Spoofed,Present,Phishing
+1032.39,1.52,0.0173,Absent,Trusted/Corporate,Present,Phishing
+639.07,3.43,1.94,Present,Trusted/Corporate,Present,Legitimate
+1075.27,1.19,0.201,Present,Trusted/Corporate,Present,Phishing
+200.68,1.11,0.0498,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2242.25,3.67,3.41,Absent,Trusted/Corporate,Present,Legitimate
+1770.44,1.88,1.8,Present,Suspicious/Spoofed,Present,Legitimate
+908.34,2.86,0.119,Absent,Trusted/Corporate,Present,Legitimate
+664.85,0.121,0.0971,Present,Trusted/Corporate,Present,Phishing
+3076.3,7.93,0.954,Absent,Trusted/Corporate,Present,Legitimate
+154.27,0.39,1.66,Absent,Trusted/Corporate,Absent,Phishing
+926.54,2.78,0.044,Present,Trusted/Corporate,Present,Phishing
+705.26,1.6,0.000414,Absent,Trusted/Corporate,Present,Phishing
+500.77,5.1,1.63,Absent,Suspicious/Spoofed,Present,Legitimate
+188.7,2.6,0.221,Present,Trusted/Corporate,Present,Phishing
+4564.86,3.28,0.00467,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1684.47,2.33,0.738,Absent,Trusted/Corporate,Present,Legitimate
+9336.37,3.57,0.0104,Absent,Trusted/Corporate,Present,Phishing
+997.19,2.13,0.0427,Present,Trusted/Corporate,Present,Phishing
+1503.98,4.05,0.00201,Absent,Trusted/Corporate,Present,Legitimate
+1078.65,3.97,0.0627,Absent,Free-Webmail/Common Provider,Present,Legitimate
+969.21,3.62,1.22,Present,Suspicious/Spoofed,Present,Legitimate
+1306.04,2.38,0.011,Absent,Trusted/Corporate,Present,Phishing
+704.51,3.01,0.394,Absent,Free-Webmail/Common Provider,Present,Phishing
+709.56,1.13,0.000361,Present,Trusted/Corporate,Present,Phishing
+488.35,4.14,1.02,Absent,Trusted/Corporate,Present,Legitimate
+591.91,5.8,0.0416,Absent,Trusted/Corporate,Present,Legitimate
+1295.59,4.81,0.288,Present,Suspicious/Spoofed,Present,Phishing
+584.83,5.52,0.0133,Absent,Free-Webmail/Common Provider,Present,Legitimate
+976.08,3.58,0.155,Absent,Suspicious/Spoofed,Absent,Legitimate
+465.7,1.04,0.00458,Present,Trusted/Corporate,Present,Phishing
+2185.81,3.54,0.0685,Present,Free-Webmail/Common Provider,Present,Legitimate
+266.22,1.34,1.82,Absent,Trusted/Corporate,Present,Legitimate
+274.74,0.74,1.36,Absent,Suspicious/Spoofed,Present,Legitimate
+258.57,3.61,0.0535,Absent,Trusted/Corporate,Present,Phishing
+356.77,2.13,0.0391,Present,Suspicious/Spoofed,Present,Phishing
+1164.89,2.24,0.0523,Present,Trusted/Corporate,Present,Phishing
+1760.39,0.915,0.984,Present,Trusted/Corporate,Present,Phishing
+198.5,1.85,0.00597,Absent,Free-Webmail/Common Provider,Present,Legitimate
+636.01,5.03,0.915,Present,Trusted/Corporate,Present,Legitimate
+725.19,2.3,0.47,Present,Trusted/Corporate,Absent,Phishing
+964.05,1.96,0.00791,Absent,Trusted/Corporate,Present,Phishing
+408.84,0.242,0.0503,Absent,Free-Webmail/Common Provider,Present,Phishing
+877.89,1.56,0.0887,Absent,Trusted/Corporate,Present,Legitimate
+1222.17,1.2,0.00236,Absent,Trusted/Corporate,Absent,Phishing
+1953.66,1.7,1.49,Absent,Free-Webmail/Common Provider,Present,Legitimate
+99.3,1.95,0.157,Present,Free-Webmail/Common Provider,Present,Phishing
+764.49,2.28,0.0396,Absent,Free-Webmail/Common Provider,Absent,Phishing
+1518.36,7.54,0.124,Absent,Trusted/Corporate,Present,Legitimate
+1065.9,1.74,0.107,Absent,Free-Webmail/Common Provider,Present,Legitimate
+6535.56,4.34,0.0414,Present,Trusted/Corporate,Present,Legitimate
+1073.44,1.83,0.287,Present,Trusted/Corporate,Present,Phishing
+625.83,1.18,0.0012,Absent,Trusted/Corporate,Present,Phishing
+365.2,1.28,0.129,Absent,Trusted/Corporate,Absent,Legitimate
+659.28,0.856,0.234,Absent,Trusted/Corporate,Present,Phishing
+1328.38,2.04,0.284,Absent,Free-Webmail/Common Provider,Present,Legitimate
+218.24,0.429,0.163,Absent,Trusted/Corporate,Absent,Legitimate
+1967.05,3.82,1.48,Absent,Trusted/Corporate,Absent,Phishing
+561.72,5.82,0.103,Present,Trusted/Corporate,Present,Phishing
+527.8,2.36,0.319,Absent,Trusted/Corporate,Present,Legitimate
+163.74,1.84,3.38,Present,Suspicious/Spoofed,Present,Legitimate
+725.33,0.947,0.318,Present,Free-Webmail/Common Provider,Present,Legitimate
+144.04,7.01,1.46,Absent,Suspicious/Spoofed,Present,Legitimate
+248.7,3.0,0.0243,Absent,Trusted/Corporate,Present,Phishing
+2878.12,4.19,0.0607,Absent,Free-Webmail/Common Provider,Present,Legitimate
+985.42,1.62,0.344,Absent,Free-Webmail/Common Provider,Present,Legitimate
+963.01,4.76,0.0195,Absent,Trusted/Corporate,Present,Phishing
+980.65,2.46,0.622,Present,Trusted/Corporate,Present,Phishing
+461.95,1.56,0.0842,Absent,Trusted/Corporate,Present,Phishing
+352.61,1.05,0.456,Present,Free-Webmail/Common Provider,Present,Legitimate
+617.83,2.58,0.108,Absent,Trusted/Corporate,Present,Legitimate
+1458.88,1.49,2.8,Present,Trusted/Corporate,Present,Phishing
+337.62,7.96,0.402,Absent,Suspicious/Spoofed,Present,Legitimate
+985.95,1.85,0.302,Present,Free-Webmail/Common Provider,Present,Phishing
+374.29,3.36,0.0903,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+507.22,3.46,0.114,Absent,Trusted/Corporate,Present,Legitimate
+181.78,1.37,0.642,Absent,Suspicious/Spoofed,Present,Phishing
+440.0,0.268,0.0362,Present,Trusted/Corporate,Present,Phishing
+295.14,1.46,3.79,Present,Trusted/Corporate,Present,Phishing
+1530.74,0.457,0.145,Absent,Trusted/Corporate,Present,Phishing
+983.66,2.69,0.0687,Present,Trusted/Corporate,Present,Phishing
+410.41,2.62,0.0174,Present,Free-Webmail/Common Provider,Present,Phishing
+1321.37,4.95,0.00799,Present,Free-Webmail/Common Provider,Present,Phishing
+329.89,4.42,0.0779,Present,Trusted/Corporate,Present,Phishing
+1473.62,1.7,1.26,Present,Free-Webmail/Common Provider,Present,Phishing
+514.5,2.1,0.761,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+222.36,1.8,1.48,Absent,Suspicious/Spoofed,Present,Legitimate
+127.05,2.57,0.314,Absent,Trusted/Corporate,Absent,Legitimate
+594.25,0.91,0.372,Present,Trusted/Corporate,Absent,Phishing
+405.19,3.55,0.736,Absent,Trusted/Corporate,Present,Legitimate
+266.55,1.45,5.41e-07,Present,Free-Webmail/Common Provider,Present,Phishing
+368.22,0.816,1.26,Absent,Trusted/Corporate,Present,Legitimate
+1391.58,1.52,0.655,Present,Free-Webmail/Common Provider,Present,Phishing
+953.34,2.55,2.04,Absent,Trusted/Corporate,Present,Legitimate
+1449.46,8.29,1.0,Absent,Trusted/Corporate,Absent,Legitimate
+571.24,1.2,1.65,Present,Trusted/Corporate,Present,Legitimate
+312.9,3.58,0.293,Absent,Trusted/Corporate,Present,Legitimate
+1010.75,1.58,0.957,Absent,Free-Webmail/Common Provider,Absent,Phishing
+942.75,1.94,0.144,Present,Trusted/Corporate,Present,Phishing
+519.26,2.56,0.00155,Present,Suspicious/Spoofed,Present,Legitimate
+1755.62,2.76,0.119,Absent,Trusted/Corporate,Present,Legitimate
+990.62,3.9,0.0485,Absent,Trusted/Corporate,Present,Legitimate
+108.13,1.06,0.116,Absent,Free-Webmail/Common Provider,Present,Phishing
+447.22,2.26,1.46,Present,Trusted/Corporate,Present,Legitimate
+399.15,0.21,0.667,Present,Trusted/Corporate,Present,Phishing
+914.63,1.67,0.0277,Absent,Free-Webmail/Common Provider,Present,Legitimate
+285.22,0.248,3.9,Absent,Trusted/Corporate,Absent,Legitimate
+1537.04,4.43,1.46,Absent,Trusted/Corporate,Absent,Legitimate
+605.05,2.59,0.0809,Present,Trusted/Corporate,Present,Phishing
+706.76,2.21,0.00399,Absent,Trusted/Corporate,Present,Legitimate
+3404.63,3.82,0.0173,Present,Free-Webmail/Common Provider,Present,Legitimate
+588.92,1.55,0.0362,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1155.32,3.51,0.00123,Absent,Trusted/Corporate,Present,Phishing
+876.06,3.64,0.178,Absent,Trusted/Corporate,Present,Legitimate
+1807.13,2.35,0.152,Absent,Trusted/Corporate,Absent,Legitimate
+411.4,1.18,0.0538,Absent,Trusted/Corporate,Present,Legitimate
+867.25,1.48,0.835,Absent,Trusted/Corporate,Present,Legitimate
+1311.65,1.38,0.77,Present,Trusted/Corporate,Present,Phishing
+733.98,4.07,0.104,Present,Free-Webmail/Common Provider,Present,Legitimate
+1000.56,1.47,1.23,Absent,Trusted/Corporate,Present,Phishing
+2376.46,0.782,0.806,Present,Free-Webmail/Common Provider,Present,Phishing
+934.38,2.27,0.175,Present,Trusted/Corporate,Present,Legitimate
+1144.82,4.44,2.0,Absent,Trusted/Corporate,Present,Legitimate
+431.63,3.35,0.41,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1382.01,4.5,0.0934,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1922.88,2.53,0.542,Absent,Suspicious/Spoofed,Present,Legitimate
+752.42,2.59,0.0609,Absent,Trusted/Corporate,Present,Phishing
+1209.41,6.41,0.482,Absent,Trusted/Corporate,Present,Legitimate
+1103.09,7.93,0.03,Absent,Free-Webmail/Common Provider,Present,Legitimate
+346.42,5.97,0.349,Absent,Free-Webmail/Common Provider,Present,Legitimate
+879.97,2.23,0.0377,Present,Trusted/Corporate,Present,Legitimate
+1112.41,6.53,0.498,Absent,Free-Webmail/Common Provider,Present,Legitimate
+346.76,2.49,0.62,Absent,Free-Webmail/Common Provider,Present,Legitimate
+276.49,0.492,0.0156,Present,Trusted/Corporate,Present,Phishing
+314.39,2.2,0.0832,Absent,Free-Webmail/Common Provider,Present,Legitimate
+842.82,2.1,0.197,Present,Trusted/Corporate,Present,Legitimate
+1039.13,4.05,0.14,Absent,Trusted/Corporate,Present,Legitimate
+634.02,3.01,0.0243,Present,Trusted/Corporate,Present,Legitimate
+116.69,0.777,0.585,Absent,Trusted/Corporate,Present,Phishing
+2629.13,3.94,0.578,Absent,Trusted/Corporate,Present,Legitimate
+262.1,3.3,0.705,Present,Trusted/Corporate,Present,Legitimate
+561.77,3.25,0.0371,Absent,Trusted/Corporate,Absent,Legitimate
+459.34,2.29,3.74,Absent,Suspicious/Spoofed,Present,Legitimate
+322.7,1.54,0.031,Absent,Trusted/Corporate,Absent,Phishing
+591.68,1.51,0.00222,Absent,Free-Webmail/Common Provider,Present,Legitimate
+318.51,0.407,0.0416,Absent,Trusted/Corporate,Present,Legitimate
+306.54,5.36,0.152,Absent,Trusted/Corporate,Present,Legitimate
+2768.09,1.35,0.495,Present,Trusted/Corporate,Present,Phishing
+1518.35,3.19,0.112,Present,Trusted/Corporate,Absent,Phishing
+370.06,2.99,2.1,Absent,Free-Webmail/Common Provider,Present,Legitimate
+421.45,3.49,0.0281,Present,Trusted/Corporate,Present,Phishing
+1068.85,1.77,1.23,Present,Trusted/Corporate,Present,Legitimate
+2361.9,1.42,0.174,Present,Trusted/Corporate,Present,Phishing
+352.82,1.12,0.838,Absent,Trusted/Corporate,Absent,Phishing
+676.26,0.89,1.36,Absent,Trusted/Corporate,Absent,Legitimate
+463.94,0.674,0.186,Absent,Free-Webmail/Common Provider,Present,Legitimate
+332.84,4.53,1.1,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+2126.14,3.28,1.55,Absent,Trusted/Corporate,Present,Legitimate
+516.74,0.669,0.0144,Absent,Trusted/Corporate,Present,Phishing
+133.65,1.14,0.342,Absent,Trusted/Corporate,Present,Phishing
+1261.69,4.48,0.0441,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1087.02,3.36,0.0659,Present,Trusted/Corporate,Present,Phishing
+256.57,1.7,0.218,Present,Trusted/Corporate,Present,Legitimate
+299.75,1.51,0.71,Absent,Trusted/Corporate,Present,Legitimate
+846.39,5.75,0.463,Absent,Trusted/Corporate,Present,Legitimate
+682.65,1.4,0.0307,Present,Trusted/Corporate,Absent,Phishing
+167.09,1.17,1.46,Present,Trusted/Corporate,Present,Phishing
+956.27,6.54,0.0052,Absent,Trusted/Corporate,Present,Legitimate
+223.77,0.556,0.0043,Absent,Trusted/Corporate,Present,Phishing
+579.46,3.43,0.086,Present,Trusted/Corporate,Present,Phishing
+196.52,2.37,0.617,Absent,Suspicious/Spoofed,Present,Legitimate
+809.25,0.732,0.138,Present,Trusted/Corporate,Absent,Phishing
+246.0,3.02,0.0196,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1835.83,3.37,0.507,Absent,Trusted/Corporate,Present,Legitimate
+327.19,5.65,0.819,Absent,Trusted/Corporate,Present,Legitimate
+1203.81,4.42,0.446,Present,Trusted/Corporate,Present,Phishing
+821.89,1.9,1.34,Present,Free-Webmail/Common Provider,Present,Legitimate
+229.82,8.68,0.0579,Absent,Free-Webmail/Common Provider,Present,Legitimate
+568.69,3.02,2.41,Absent,Trusted/Corporate,Present,Legitimate
+519.5,1.47,0.52,Present,Free-Webmail/Common Provider,Present,Legitimate
+402.56,1.98,0.111,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1740.11,0.495,2.27,Absent,Trusted/Corporate,Present,Phishing
+233.22,0.795,0.00286,Absent,Trusted/Corporate,Absent,Phishing
+1134.03,2.01,0.27,Absent,Trusted/Corporate,Present,Legitimate
+1139.31,4.2,0.96,Absent,Trusted/Corporate,Present,Phishing
+448.03,3.8,1.23,Absent,Free-Webmail/Common Provider,Present,Legitimate
+282.48,0.983,0.28,Absent,Suspicious/Spoofed,Present,Phishing
+300.92,0.432,0.313,Present,Trusted/Corporate,Absent,Phishing
+897.47,2.26,0.000879,Present,Trusted/Corporate,Present,Phishing
+184.82,3.77,2.09,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1471.62,2.24,0.598,Absent,Trusted/Corporate,Present,Legitimate
+1563.35,1.72,1.15,Present,Free-Webmail/Common Provider,Present,Phishing
+1558.48,1.74,0.709,Absent,Trusted/Corporate,Present,Legitimate
+1114.0,4.28,0.179,Absent,Trusted/Corporate,Present,Legitimate
+550.74,2.78,2.31,Present,Free-Webmail/Common Provider,Present,Legitimate
+1673.78,2.68,0.862,Present,Trusted/Corporate,Present,Legitimate
+331.7,1.17,0.703,Absent,Trusted/Corporate,Present,Phishing
+788.38,4.29,0.236,Absent,Trusted/Corporate,Present,Legitimate
+3869.88,0.674,0.688,Absent,Trusted/Corporate,Present,Phishing
+1055.82,2.72,2.23,Absent,Trusted/Corporate,Present,Legitimate
+1263.27,4.38,0.0538,Present,Suspicious/Spoofed,Present,Legitimate
+363.49,2.17,0.00841,Absent,Suspicious/Spoofed,Present,Legitimate
+266.76,0.127,0.0939,Absent,Trusted/Corporate,Present,Phishing
+815.43,1.22,0.104,Absent,Trusted/Corporate,Present,Phishing
+381.59,4.31,0.0559,Absent,Free-Webmail/Common Provider,Present,Legitimate
+521.65,1.39,0.00205,Absent,Trusted/Corporate,Present,Legitimate
+1109.73,4.04,1.68,Absent,Suspicious/Spoofed,Present,Legitimate
+430.81,6.63,0.8,Absent,Trusted/Corporate,Present,Legitimate
+227.22,0.767,0.0907,Present,Trusted/Corporate,Absent,Legitimate
+687.1,2.51,0.176,Absent,Free-Webmail/Common Provider,Absent,Phishing
+3912.41,1.98,0.528,Present,Free-Webmail/Common Provider,Present,Legitimate
+266.99,2.87,0.578,Absent,Free-Webmail/Common Provider,Present,Phishing
+301.59,1.47,0.287,Absent,Trusted/Corporate,Present,Legitimate
+1145.53,2.74,0.287,Absent,Trusted/Corporate,Absent,Legitimate
+2555.32,3.66,0.00867,Absent,Trusted/Corporate,Present,Legitimate
+1779.04,1.49,0.0244,Absent,Free-Webmail/Common Provider,Present,Phishing
+884.76,1.94,0.0417,Absent,Trusted/Corporate,Absent,Legitimate
+1086.48,3.48,0.0149,Absent,Trusted/Corporate,Absent,Legitimate
+1737.82,2.06,0.048,Absent,Trusted/Corporate,Present,Phishing
+295.8,1.34,0.00286,Present,Trusted/Corporate,Present,Phishing
+1096.4,2.2,0.015,Absent,Trusted/Corporate,Present,Phishing
+628.32,3.11,0.242,Absent,Trusted/Corporate,Present,Legitimate
+1727.61,0.928,0.0182,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1256.99,1.84,0.169,Absent,Trusted/Corporate,Present,Phishing
+817.31,2.56,0.952,Absent,Free-Webmail/Common Provider,Present,Legitimate
+697.84,4.89,2.21,Absent,Trusted/Corporate,Present,Legitimate
+587.07,1.52,0.564,Absent,Trusted/Corporate,Present,Phishing
+473.14,1.54,0.683,Present,Free-Webmail/Common Provider,Present,Phishing
+1768.41,2.31,0.0598,Absent,Trusted/Corporate,Present,Legitimate
+594.96,0.246,0.0388,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+356.18,1.54,0.0303,Absent,Trusted/Corporate,Absent,Phishing
+713.76,4.45,0.0784,Absent,Trusted/Corporate,Present,Legitimate
+1114.55,1.98,0.118,Present,Trusted/Corporate,Present,Phishing
+369.11,2.74,0.0356,Absent,Trusted/Corporate,Absent,Legitimate
+1816.07,2.04,0.00581,Absent,Trusted/Corporate,Present,Legitimate
+1810.76,1.55,2.2,Present,Trusted/Corporate,Absent,Phishing
+681.91,3.65,0.409,Absent,Trusted/Corporate,Present,Legitimate
+1816.8,1.02,0.00135,Absent,Trusted/Corporate,Present,Legitimate
+1467.19,3.27,0.268,Absent,Trusted/Corporate,Present,Phishing
+244.74,1.04,0.116,Present,Trusted/Corporate,Present,Legitimate
+279.5,2.36,0.239,Absent,Trusted/Corporate,Present,Legitimate
+555.32,2.83,0.506,Absent,Trusted/Corporate,Present,Phishing
+185.72,2.1,0.102,Present,Trusted/Corporate,Absent,Phishing
+437.3,2.34,0.248,Absent,Trusted/Corporate,Present,Legitimate
+329.12,0.6,0.32,Absent,Trusted/Corporate,Absent,Legitimate
+142.92,0.481,0.0256,Present,Trusted/Corporate,Present,Phishing
+577.55,1.14,1.3,Present,Trusted/Corporate,Present,Phishing
+328.88,0.652,0.729,Absent,Trusted/Corporate,Absent,Phishing
+1130.48,2.8,0.0209,Present,Trusted/Corporate,Present,Phishing
+1095.18,1.22,0.156,Absent,Trusted/Corporate,Absent,Legitimate
+1001.31,0.941,1.23,Absent,Free-Webmail/Common Provider,Present,Phishing
+175.98,2.25,0.722,Present,Free-Webmail/Common Provider,Present,Phishing
+720.46,1.22,0.181,Absent,Free-Webmail/Common Provider,Present,Legitimate
+229.39,5.63,0.416,Present,Trusted/Corporate,Absent,Phishing
+485.13,0.64,0.163,Present,Free-Webmail/Common Provider,Present,Phishing
+354.5,1.65,0.565,Absent,Trusted/Corporate,Present,Phishing
+1264.68,1.29,0.206,Absent,Free-Webmail/Common Provider,Present,Phishing
+191.99,4.5,0.00423,Present,Free-Webmail/Common Provider,Present,Legitimate
+513.78,1.42,0.0263,Absent,Trusted/Corporate,Present,Phishing
+277.9,2.36,0.0346,Present,Trusted/Corporate,Present,Phishing
+887.26,1.31,0.338,Absent,Trusted/Corporate,Present,Phishing
+773.84,2.33,0.675,Absent,Free-Webmail/Common Provider,Present,Legitimate
+121.72,1.38,0.147,Present,Suspicious/Spoofed,Present,Legitimate
+547.7,5.66,0.00353,Absent,Free-Webmail/Common Provider,Present,Legitimate
+360.76,3.5,0.247,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1081.65,0.894,1.74,Present,Free-Webmail/Common Provider,Absent,Legitimate
+296.49,0.755,0.00155,Absent,Trusted/Corporate,Absent,Legitimate
+659.17,2.13,0.169,Present,Trusted/Corporate,Present,Phishing
+883.99,2.31,0.166,Absent,Trusted/Corporate,Present,Legitimate
+513.52,1.94,0.19,Absent,Trusted/Corporate,Present,Phishing
+308.4,2.56,1.71,Absent,Trusted/Corporate,Present,Legitimate
+492.31,4.56,0.768,Absent,Trusted/Corporate,Present,Legitimate
+1495.15,2.14,0.0489,Present,Trusted/Corporate,Present,Phishing
+1091.52,1.36,0.0041,Present,Free-Webmail/Common Provider,Present,Legitimate
+221.08,0.593,0.0263,Absent,Trusted/Corporate,Present,Legitimate
+1021.02,6.81,0.833,Absent,Trusted/Corporate,Present,Legitimate
+341.72,1.05,0.0943,Absent,Trusted/Corporate,Absent,Phishing
+302.33,1.65,0.449,Absent,Trusted/Corporate,Present,Legitimate
+1316.34,7.2,0.114,Present,Free-Webmail/Common Provider,Present,Legitimate
+1605.58,3.86,1.55,Absent,Trusted/Corporate,Present,Legitimate
+697.9,1.87,0.0472,Absent,Free-Webmail/Common Provider,Absent,Phishing
+1014.89,1.59,0.121,Present,Trusted/Corporate,Present,Legitimate
+1824.07,3.5,0.0365,Absent,Trusted/Corporate,Absent,Legitimate
+570.64,0.934,6.55e-05,Absent,Trusted/Corporate,Present,Phishing
+639.64,1.02,0.00832,Present,Trusted/Corporate,Present,Legitimate
+248.64,3.62,1.01,Present,Trusted/Corporate,Present,Legitimate
+1093.62,1.67,0.358,Absent,Trusted/Corporate,Present,Legitimate
+739.79,6.45,0.134,Absent,Free-Webmail/Common Provider,Present,Legitimate
+563.82,6.88,0.286,Present,Suspicious/Spoofed,Present,Legitimate
+538.94,0.422,0.481,Present,Trusted/Corporate,Absent,Phishing
+10266.69,7.78,0.323,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1222.6,2.51,1.29,Absent,Trusted/Corporate,Present,Legitimate
+1198.03,1.31,0.242,Present,Trusted/Corporate,Present,Phishing
+661.31,4.08,0.00663,Absent,Trusted/Corporate,Present,Phishing
+1030.2,1.6,0.169,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1890.82,1.99,0.388,Absent,Trusted/Corporate,Present,Legitimate
+220.72,2.0,0.366,Present,Suspicious/Spoofed,Present,Legitimate
+333.82,3.71,0.0127,Absent,Trusted/Corporate,Present,Legitimate
+53.87,2.49,2.13,Absent,Free-Webmail/Common Provider,Present,Phishing
+552.1,3.12,0.252,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2324.69,1.79,0.218,Present,Trusted/Corporate,Present,Legitimate
+262.32,5.32,0.141,Absent,Suspicious/Spoofed,Present,Legitimate
+525.83,1.75,0.379,Present,Trusted/Corporate,Present,Phishing
+309.95,2.3,0.000137,Absent,Trusted/Corporate,Absent,Phishing
+1020.8,3.07,0.0325,Absent,Trusted/Corporate,Present,Phishing
+1523.14,0.529,0.69,Present,Trusted/Corporate,Absent,Phishing
+1447.29,0.913,0.089,Absent,Suspicious/Spoofed,Absent,Legitimate
+2217.37,1.47,0.288,Absent,Trusted/Corporate,Present,Legitimate
+401.05,1.18,0.356,Present,Free-Webmail/Common Provider,Present,Phishing
+597.43,3.78,0.415,Absent,Trusted/Corporate,Present,Phishing
+445.15,0.826,0.237,Absent,Free-Webmail/Common Provider,Present,Legitimate
+382.75,2.41,0.0475,Absent,Trusted/Corporate,Present,Legitimate
+1479.05,0.651,0.0347,Absent,Free-Webmail/Common Provider,Absent,Phishing
+700.98,2.86,0.227,Present,Free-Webmail/Common Provider,Present,Phishing
+1044.88,1.81,0.543,Present,Free-Webmail/Common Provider,Present,Phishing
+1682.89,0.761,1.29,Absent,Trusted/Corporate,Present,Phishing
+1915.04,12.31,0.457,Absent,Free-Webmail/Common Provider,Present,Legitimate
+250.39,3.45,0.0663,Absent,Trusted/Corporate,Present,Legitimate
+1199.11,4.85,0.63,Present,Trusted/Corporate,Present,Legitimate
+605.75,4.36,4.35e-08,Present,Free-Webmail/Common Provider,Present,Phishing
+977.16,0.52,0.0172,Absent,Trusted/Corporate,Absent,Phishing
+522.19,1.18,0.0876,Present,Trusted/Corporate,Present,Phishing
+644.65,1.37,0.0194,Present,Free-Webmail/Common Provider,Present,Phishing
+933.34,0.787,0.269,Present,Trusted/Corporate,Present,Phishing
+460.34,0.833,0.017,Present,Trusted/Corporate,Absent,Phishing
+1949.28,2.26,0.00212,Absent,Trusted/Corporate,Absent,Phishing
+199.76,2.32,0.202,Absent,Trusted/Corporate,Present,Phishing
+528.66,1.64,0.000167,Present,Trusted/Corporate,Present,Phishing
+315.8,1.22,0.00395,Absent,Free-Webmail/Common Provider,Present,Legitimate
+320.96,4.9,0.713,Absent,Free-Webmail/Common Provider,Present,Legitimate
+440.5,0.636,1.56,Absent,Trusted/Corporate,Present,Phishing
+3312.16,0.943,0.00531,Absent,Trusted/Corporate,Present,Phishing
+212.12,1.54,0.00336,Present,Suspicious/Spoofed,Present,Phishing
+1675.2,2.97,0.0202,Absent,Free-Webmail/Common Provider,Present,Phishing
+637.63,3.47,2.31,Absent,Trusted/Corporate,Absent,Legitimate
+581.33,1.86,0.179,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+117.41,2.47,0.595,Absent,Free-Webmail/Common Provider,Present,Phishing
+718.98,1.54,2.59,Absent,Trusted/Corporate,Present,Legitimate
+1209.71,4.6,1.48,Present,Trusted/Corporate,Present,Phishing
+565.19,0.869,1.03,Present,Trusted/Corporate,Absent,Legitimate
+226.76,2.95,0.00291,Present,Trusted/Corporate,Present,Phishing
+486.95,1.75,1.88,Absent,Trusted/Corporate,Present,Legitimate
+260.94,0.926,0.666,Absent,Free-Webmail/Common Provider,Present,Legitimate
+136.75,1.32,0.0213,Absent,Trusted/Corporate,Present,Phishing
+4885.35,8.71,0.021,Present,Trusted/Corporate,Present,Phishing
+133.81,1.33,0.00803,Present,Trusted/Corporate,Present,Phishing
+491.09,2.17,0.501,Absent,Suspicious/Spoofed,Absent,Legitimate
+1381.53,2.4,2.08,Present,Trusted/Corporate,Present,Phishing
+495.47,2.1,0.279,Present,Trusted/Corporate,Absent,Legitimate
+2466.96,0.333,0.0428,Present,Trusted/Corporate,Absent,Phishing
+304.96,0.805,0.101,Absent,Free-Webmail/Common Provider,Present,Phishing
+762.0,5.39,0.145,Present,Trusted/Corporate,Present,Legitimate
+385.09,2.57,0.0832,Absent,Trusted/Corporate,Present,Legitimate
+3136.66,5.02,0.00203,Present,Trusted/Corporate,Present,Phishing
+834.72,2.0,0.928,Absent,Trusted/Corporate,Present,Legitimate
+433.08,5.65,1.64,Absent,Free-Webmail/Common Provider,Present,Legitimate
+428.32,0.994,2.43,Present,Trusted/Corporate,Present,Phishing
+2741.18,1.91,0.155,Absent,Trusted/Corporate,Present,Legitimate
+1233.33,1.52,0.0176,Absent,Trusted/Corporate,Present,Legitimate
+789.84,0.582,0.244,Absent,Suspicious/Spoofed,Present,Legitimate
+446.7,1.11,0.00126,Present,Free-Webmail/Common Provider,Present,Phishing
+497.99,0.641,1.84,Absent,Trusted/Corporate,Present,Legitimate
+120.1,5.19,5.37e-05,Absent,Suspicious/Spoofed,Present,Legitimate
+604.3,0.978,1.6,Present,Free-Webmail/Common Provider,Absent,Legitimate
+2515.18,0.776,0.119,Present,Free-Webmail/Common Provider,Present,Phishing
+344.71,0.492,1.42,Absent,Trusted/Corporate,Absent,Legitimate
+2728.31,3.89,0.00125,Absent,Trusted/Corporate,Present,Legitimate
+489.61,0.896,0.00699,Absent,Trusted/Corporate,Present,Phishing
+254.76,0.728,2.14,Absent,Trusted/Corporate,Present,Legitimate
+618.81,2.18,2.16,Absent,Trusted/Corporate,Present,Phishing
+1042.27,2.45,0.58,Absent,Suspicious/Spoofed,Present,Legitimate
+745.44,3.92,0.743,Absent,Trusted/Corporate,Present,Legitimate
+774.32,1.16,0.851,Absent,Suspicious/Spoofed,Present,Legitimate
+745.95,1.93,0.901,Present,Free-Webmail/Common Provider,Present,Legitimate
+119.1,1.91,0.541,Absent,Trusted/Corporate,Present,Legitimate
+1304.03,5.15,0.405,Absent,Trusted/Corporate,Present,Phishing
+480.12,2.49,0.00918,Present,Trusted/Corporate,Present,Phishing
+345.59,0.332,0.138,Absent,Trusted/Corporate,Present,Phishing
+593.54,1.88,0.000684,Absent,Trusted/Corporate,Present,Phishing
+406.03,1.62,7.88e-05,Absent,Free-Webmail/Common Provider,Present,Legitimate
+735.89,2.41,2.58,Absent,Trusted/Corporate,Present,Phishing
+1813.19,4.7,0.642,Absent,Trusted/Corporate,Absent,Legitimate
+293.5,2.18,0.0603,Present,Trusted/Corporate,Present,Phishing
+1563.41,3.4,0.00159,Absent,Free-Webmail/Common Provider,Present,Legitimate
+619.73,2.44,0.622,Present,Trusted/Corporate,Absent,Phishing
+829.5,3.01,0.115,Absent,Suspicious/Spoofed,Present,Legitimate
+580.34,0.833,0.0271,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2853.72,2.85,0.262,Present,Free-Webmail/Common Provider,Absent,Phishing
+370.48,1.67,0.00204,Absent,Trusted/Corporate,Present,Phishing
+1440.04,6.21,0.114,Present,Trusted/Corporate,Present,Legitimate
+263.21,0.805,0.0791,Absent,Trusted/Corporate,Present,Phishing
+1396.68,1.57,0.857,Absent,Trusted/Corporate,Present,Legitimate
+413.25,2.12,0.171,Absent,Suspicious/Spoofed,Present,Legitimate
+685.91,2.16,0.361,Present,Free-Webmail/Common Provider,Present,Phishing
+466.77,2.72,0.0922,Present,Free-Webmail/Common Provider,Present,Phishing
+388.88,0.852,0.027,Absent,Free-Webmail/Common Provider,Absent,Phishing
+588.06,0.281,0.18,Absent,Suspicious/Spoofed,Present,Legitimate
+1185.9,0.785,0.101,Absent,Trusted/Corporate,Present,Legitimate
+1615.73,2.3,0.344,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1191.29,2.26,0.342,Present,Trusted/Corporate,Present,Legitimate
+297.79,2.16,0.725,Present,Suspicious/Spoofed,Absent,Phishing
+699.8,0.475,0.805,Absent,Trusted/Corporate,Present,Phishing
+1284.15,0.532,2.6,Present,Trusted/Corporate,Absent,Phishing
+122.73,2.51,0.0865,Absent,Trusted/Corporate,Present,Legitimate
+388.85,1.98,0.284,Absent,Trusted/Corporate,Absent,Legitimate
+1352.16,2.85,0.125,Present,Trusted/Corporate,Present,Legitimate
+101.78,1.71,0.118,Absent,Free-Webmail/Common Provider,Present,Phishing
+1368.28,1.2,0.0105,Present,Trusted/Corporate,Present,Phishing
+647.57,4.4,0.0572,Present,Trusted/Corporate,Present,Phishing
+493.86,1.25,0.336,Absent,Trusted/Corporate,Present,Legitimate
+1080.81,3.91,0.0582,Present,Trusted/Corporate,Present,Legitimate
+3110.92,2.73,0.482,Absent,Trusted/Corporate,Present,Legitimate
+6495.96,5.02,0.345,Absent,Suspicious/Spoofed,Absent,Legitimate
+575.63,5.42,0.0641,Present,Free-Webmail/Common Provider,Present,Phishing
+374.93,2.9,0.732,Absent,Trusted/Corporate,Present,Legitimate
+751.52,3.28,0.0157,Present,Free-Webmail/Common Provider,Present,Legitimate
+812.19,2.78,0.0823,Present,Free-Webmail/Common Provider,Absent,Legitimate
+1038.23,0.485,0.395,Absent,Trusted/Corporate,Present,Legitimate
+140.87,0.624,0.0133,Absent,Trusted/Corporate,Absent,Phishing
+894.66,1.15,0.601,Absent,Free-Webmail/Common Provider,Present,Legitimate
+5422.61,7.42,0.0421,Absent,Trusted/Corporate,Present,Legitimate
+1897.06,0.647,0.657,Absent,Trusted/Corporate,Absent,Legitimate
+1041.53,6.42,0.0345,Absent,Free-Webmail/Common Provider,Present,Legitimate
+278.51,1.31,0.523,Present,Trusted/Corporate,Present,Phishing
+526.3,1.47,0.383,Absent,Trusted/Corporate,Absent,Phishing
+758.32,2.42,0.403,Absent,Trusted/Corporate,Absent,Legitimate
+352.13,1.62,0.0331,Absent,Trusted/Corporate,Absent,Legitimate
+523.49,1.67,0.0279,Present,Trusted/Corporate,Absent,Phishing
+243.42,2.49,0.451,Absent,Trusted/Corporate,Present,Legitimate
+777.98,1.95,0.52,Absent,Free-Webmail/Common Provider,Present,Legitimate
+779.46,1.64,1.15,Absent,Suspicious/Spoofed,Present,Legitimate
+889.94,2.86,0.05,Absent,Suspicious/Spoofed,Present,Legitimate
+851.24,5.24,0.0456,Present,Free-Webmail/Common Provider,Present,Legitimate
+374.47,3.77,0.124,Absent,Trusted/Corporate,Present,Legitimate
+1795.91,5.52,0.0674,Present,Trusted/Corporate,Present,Phishing
+1408.29,1.47,0.185,Absent,Free-Webmail/Common Provider,Present,Legitimate
+796.19,2.04,0.0479,Absent,Free-Webmail/Common Provider,Present,Legitimate
+781.4,2.04,0.267,Absent,Trusted/Corporate,Present,Legitimate
+1490.16,2.52,0.219,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2136.9,2.44,0.0192,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+567.03,1.5,0.215,Present,Trusted/Corporate,Present,Phishing
+889.98,3.37,0.0589,Absent,Trusted/Corporate,Present,Phishing
+277.1,1.18,0.0606,Present,Trusted/Corporate,Absent,Phishing
+248.77,3.47,0.25,Present,Free-Webmail/Common Provider,Absent,Phishing
+271.43,1.17,0.155,Absent,Trusted/Corporate,Present,Legitimate
+1103.65,1.88,0.231,Absent,Trusted/Corporate,Present,Legitimate
+1823.97,2.75,0.451,Present,Trusted/Corporate,Present,Phishing
+1450.86,5.46,0.374,Present,Free-Webmail/Common Provider,Present,Phishing
+130.12,2.24,0.417,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1551.94,2.86,1.52,Present,Trusted/Corporate,Present,Phishing
+711.12,1.15,0.00592,Present,Trusted/Corporate,Absent,Phishing
+845.17,1.41,0.000422,Present,Trusted/Corporate,Absent,Phishing
+597.61,0.73,0.502,Absent,Suspicious/Spoofed,Absent,Legitimate
+1652.39,4.49,0.349,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1749.37,1.76,0.000674,Present,Trusted/Corporate,Absent,Phishing
+689.62,1.54,0.613,Absent,Free-Webmail/Common Provider,Absent,Phishing
+708.08,4.89,0.000297,Absent,Trusted/Corporate,Absent,Legitimate
+206.96,1.63,0.16,Absent,Trusted/Corporate,Absent,Legitimate
+595.58,3.7,1.77,Absent,Free-Webmail/Common Provider,Present,Legitimate
+212.84,1.72,0.71,Absent,Suspicious/Spoofed,Present,Legitimate
+373.5,0.807,0.0604,Present,Trusted/Corporate,Present,Phishing
+487.54,0.954,0.0132,Absent,Trusted/Corporate,Absent,Phishing
+522.06,2.02,3.32,Absent,Trusted/Corporate,Present,Legitimate
+793.24,4.26,0.359,Present,Trusted/Corporate,Present,Legitimate
+1232.07,4.69,0.912,Absent,Trusted/Corporate,Absent,Legitimate
+699.2,0.794,0.277,Absent,Suspicious/Spoofed,Present,Legitimate
+309.39,3.07,0.37,Absent,Free-Webmail/Common Provider,Present,Legitimate
+421.69,1.2,0.143,Absent,Trusted/Corporate,Present,Phishing
+1326.34,1.03,0.411,Absent,Free-Webmail/Common Provider,Present,Legitimate
+511.92,0.649,4.8e-05,Present,Trusted/Corporate,Present,Phishing
+652.97,5.12,0.79,Absent,Trusted/Corporate,Present,Legitimate
+708.19,4.41,0.00291,Absent,Free-Webmail/Common Provider,Present,Legitimate
+513.59,3.55,0.00391,Present,Trusted/Corporate,Present,Phishing
+458.36,6.21,0.494,Present,Trusted/Corporate,Present,Legitimate
+131.82,2.13,0.0947,Absent,Suspicious/Spoofed,Present,Legitimate
+3172.9,2.13,0.793,Absent,Trusted/Corporate,Present,Legitimate
+955.29,1.97,0.789,Absent,Free-Webmail/Common Provider,Present,Legitimate
+533.94,1.74,0.0832,Absent,Trusted/Corporate,Present,Legitimate
+2074.56,1.28,1.47,Absent,Free-Webmail/Common Provider,Present,Legitimate
+961.11,2.22,2.5,Absent,Trusted/Corporate,Present,Legitimate
+431.14,1.19,0.00453,Present,Free-Webmail/Common Provider,Present,Phishing
+1441.72,4.77,0.0849,Absent,Trusted/Corporate,Present,Phishing
+7725.27,1.64,0.617,Present,Trusted/Corporate,Absent,Phishing
+1025.51,2.87,0.0514,Absent,Free-Webmail/Common Provider,Present,Legitimate
+428.96,0.896,1.83,Present,Trusted/Corporate,Absent,Phishing
+1000.24,1.38,0.00127,Absent,Suspicious/Spoofed,Absent,Legitimate
+2143.98,1.11,0.732,Present,Trusted/Corporate,Present,Legitimate
+144.03,1.47,0.324,Absent,Trusted/Corporate,Present,Legitimate
+1649.13,1.3,0.1,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1443.11,1.84,0.0954,Absent,Trusted/Corporate,Present,Legitimate
+865.91,2.14,1.72,Absent,Trusted/Corporate,Absent,Phishing
+308.3,3.74,0.00295,Present,Free-Webmail/Common Provider,Present,Legitimate
+889.51,4.19,0.369,Absent,Trusted/Corporate,Present,Phishing
+2245.07,6.57,1.09,Present,Trusted/Corporate,Present,Phishing
+778.88,2.92,0.0106,Absent,Trusted/Corporate,Present,Phishing
+2348.61,2.28,0.621,Absent,Trusted/Corporate,Present,Legitimate
+3406.04,3.69,0.405,Present,Free-Webmail/Common Provider,Present,Legitimate
+1502.47,3.49,0.438,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1949.43,2.33,1.67,Absent,Trusted/Corporate,Absent,Legitimate
+240.2,1.04,0.0115,Absent,Free-Webmail/Common Provider,Present,Phishing
+1529.28,0.652,0.071,Present,Free-Webmail/Common Provider,Present,Legitimate
+242.13,1.88,0.286,Present,Trusted/Corporate,Absent,Phishing
+661.73,1.68,0.0554,Absent,Free-Webmail/Common Provider,Present,Phishing
+123.4,2.04,0.234,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+841.14,5.57,0.007,Absent,Trusted/Corporate,Present,Legitimate
+541.46,2.5,0.000168,Absent,Trusted/Corporate,Present,Phishing
+1944.78,2.32,0.271,Present,Free-Webmail/Common Provider,Present,Phishing
+705.12,2.29,0.0606,Present,Trusted/Corporate,Present,Phishing
+887.75,4.94,0.233,Absent,Suspicious/Spoofed,Present,Legitimate
+1368.43,2.35,0.159,Present,Trusted/Corporate,Present,Phishing
+1530.22,1.13,1.28,Absent,Trusted/Corporate,Present,Legitimate
+1263.21,1.19,0.464,Absent,Trusted/Corporate,Present,Phishing
+829.86,1.06,0.0605,Absent,Free-Webmail/Common Provider,Present,Legitimate
+611.3,3.27,0.631,Present,Trusted/Corporate,Present,Phishing
+677.86,2.95,2.01,Absent,Trusted/Corporate,Present,Phishing
+994.77,2.66,0.000232,Absent,Trusted/Corporate,Present,Phishing
+820.77,2.99,0.745,Present,Trusted/Corporate,Present,Legitimate
+537.43,2.97,0.368,Absent,Trusted/Corporate,Present,Legitimate
+420.59,2.84,0.0766,Absent,Trusted/Corporate,Absent,Phishing
+1036.32,2.58,0.544,Present,Suspicious/Spoofed,Present,Legitimate
+437.75,2.4,0.041,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2201.13,0.791,0.165,Absent,Free-Webmail/Common Provider,Present,Legitimate
+3627.26,0.651,0.576,Present,Free-Webmail/Common Provider,Present,Phishing
+540.95,0.807,0.00277,Present,Trusted/Corporate,Absent,Phishing
+1244.19,1.38,0.741,Absent,Suspicious/Spoofed,Present,Legitimate
+1201.64,2.77,0.134,Present,Trusted/Corporate,Absent,Legitimate
+253.75,3.07,1.78,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1191.93,4.38,0.707,Present,Free-Webmail/Common Provider,Present,Phishing
+428.73,2.79,2.47,Absent,Suspicious/Spoofed,Absent,Legitimate
+1547.74,6.36,0.102,Absent,Trusted/Corporate,Absent,Legitimate
+886.54,5.67,0.0557,Present,Trusted/Corporate,Present,Phishing
+465.66,2.69,0.0585,Absent,Trusted/Corporate,Present,Phishing
+2857.39,7.77,0.576,Absent,Trusted/Corporate,Present,Legitimate
+262.81,3.37,2.73,Absent,Trusted/Corporate,Present,Legitimate
+929.9,3.65,0.848,Present,Free-Webmail/Common Provider,Present,Legitimate
+617.67,3.92,2.0,Present,Trusted/Corporate,Present,Phishing
+244.26,2.6,1.19,Present,Trusted/Corporate,Present,Phishing
+888.75,2.21,0.285,Absent,Free-Webmail/Common Provider,Absent,Phishing
+377.1,3.21,0.064,Absent,Trusted/Corporate,Absent,Phishing
+1974.88,1.55,1.46,Present,Suspicious/Spoofed,Present,Legitimate
+334.84,3.43,0.207,Absent,Trusted/Corporate,Present,Legitimate
+951.64,0.725,0.578,Present,Free-Webmail/Common Provider,Present,Phishing
+1081.14,2.86,0.335,Absent,Free-Webmail/Common Provider,Present,Legitimate
+307.19,2.21,0.000649,Absent,Trusted/Corporate,Present,Phishing
+910.18,1.96,2.17e-05,Present,Trusted/Corporate,Present,Phishing
+1129.91,1.37,0.567,Absent,Free-Webmail/Common Provider,Present,Legitimate
+377.56,1.3,0.309,Absent,Trusted/Corporate,Present,Phishing
+1492.27,0.81,0.159,Absent,Trusted/Corporate,Absent,Phishing
+1335.45,2.52,0.0449,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1295.73,0.966,0.103,Present,Suspicious/Spoofed,Present,Legitimate
+935.96,4.37,1.14,Present,Trusted/Corporate,Present,Legitimate
+636.65,1.92,0.364,Absent,Free-Webmail/Common Provider,Present,Legitimate
+181.96,1.7,3.13,Present,Trusted/Corporate,Present,Phishing
+1833.9,1.3,0.179,Absent,Trusted/Corporate,Present,Phishing
+259.76,2.39,0.0305,Present,Free-Webmail/Common Provider,Present,Legitimate
+1501.17,1.26,0.0487,Present,Free-Webmail/Common Provider,Present,Phishing
+404.03,1.71,0.0042,Absent,Trusted/Corporate,Present,Legitimate
+1007.44,3.8,0.093,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1067.71,1.85,0.0407,Absent,Suspicious/Spoofed,Present,Legitimate
+1708.44,2.24,1.79,Absent,Trusted/Corporate,Present,Legitimate
+748.79,2.28,0.0255,Present,Trusted/Corporate,Absent,Phishing
+275.21,0.364,0.0138,Absent,Free-Webmail/Common Provider,Present,Phishing
+544.3,2.06,0.000707,Present,Trusted/Corporate,Present,Legitimate
+749.38,0.968,0.0969,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+439.22,6.53,0.00137,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1500.11,3.07,0.159,Present,Trusted/Corporate,Present,Phishing
+516.62,1.36,2.43,Absent,Trusted/Corporate,Present,Legitimate
+806.68,2.85,0.506,Absent,Suspicious/Spoofed,Present,Legitimate
+650.6,1.87,0.187,Present,Free-Webmail/Common Provider,Present,Legitimate
+497.78,2.03,0.397,Absent,Trusted/Corporate,Present,Legitimate
+1249.2,0.366,2.11,Absent,Free-Webmail/Common Provider,Present,Phishing
+653.72,7.72,0.413,Present,Trusted/Corporate,Present,Legitimate
+963.88,4.22,0.075,Absent,Trusted/Corporate,Present,Phishing
+1643.63,0.922,0.087,Present,Trusted/Corporate,Present,Phishing
+297.53,3.68,0.0627,Absent,Trusted/Corporate,Present,Legitimate
+1029.45,1.01,0.0681,Absent,Trusted/Corporate,Absent,Phishing
+561.68,3.92,0.389,Absent,Trusted/Corporate,Absent,Legitimate
+800.1,1.1,0.115,Absent,Free-Webmail/Common Provider,Present,Phishing
+615.47,5.62,0.0532,Absent,Free-Webmail/Common Provider,Present,Legitimate
+415.79,1.13,0.361,Absent,Trusted/Corporate,Present,Legitimate
+511.93,0.818,0.21,Absent,Trusted/Corporate,Present,Legitimate
+112.79,2.91,0.0443,Present,Trusted/Corporate,Absent,Phishing
+1088.6,1.84,0.355,Present,Trusted/Corporate,Present,Legitimate
+2674.87,0.61,0.493,Present,Trusted/Corporate,Present,Phishing
+170.99,0.441,0.478,Absent,Trusted/Corporate,Present,Legitimate
+1494.51,2.64,0.247,Present,Trusted/Corporate,Absent,Phishing
+144.57,0.75,0.0842,Absent,Trusted/Corporate,Absent,Legitimate
+487.51,1.84,1.95,Present,Suspicious/Spoofed,Present,Legitimate
+3202.76,1.59,0.000108,Present,Trusted/Corporate,Present,Phishing
+203.93,3.63,0.0272,Present,Trusted/Corporate,Present,Legitimate
+862.95,1.97,0.591,Absent,Trusted/Corporate,Present,Legitimate
+645.25,9.39,0.0109,Absent,Trusted/Corporate,Present,Legitimate
+602.04,1.48,0.126,Absent,Trusted/Corporate,Present,Legitimate
+658.02,0.677,0.043,Present,Trusted/Corporate,Present,Phishing
+1516.03,3.29,0.277,Absent,Suspicious/Spoofed,Present,Legitimate
+122.34,0.701,0.62,Absent,Trusted/Corporate,Present,Phishing
+1233.34,3.88,0.00966,Present,Trusted/Corporate,Present,Phishing
+464.32,3.84,0.0121,Absent,Free-Webmail/Common Provider,Present,Phishing
+1341.02,5.76,0.000218,Absent,Trusted/Corporate,Present,Legitimate
+494.55,0.447,1.22,Absent,Trusted/Corporate,Absent,Legitimate
+474.52,5.05,0.207,Absent,Free-Webmail/Common Provider,Present,Legitimate
+603.2,0.62,0.417,Absent,Trusted/Corporate,Present,Phishing
+1917.96,5.48,0.0699,Absent,Trusted/Corporate,Present,Legitimate
+409.04,2.99,0.886,Absent,Trusted/Corporate,Present,Legitimate
+512.36,3.88,0.0118,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1336.78,4.96,0.265,Absent,Trusted/Corporate,Present,Legitimate
+302.78,0.458,0.117,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1267.97,1.5,0.0261,Present,Free-Webmail/Common Provider,Present,Legitimate
+1646.46,1.11,0.225,Present,Trusted/Corporate,Present,Legitimate
+646.8,0.288,0.147,Present,Suspicious/Spoofed,Absent,Legitimate
+283.0,1.24,0.0875,Present,Suspicious/Spoofed,Present,Legitimate
+406.18,1.49,3.49,Present,Free-Webmail/Common Provider,Absent,Phishing
+332.81,1.89,0.882,Absent,Trusted/Corporate,Present,Phishing
+551.76,1.02,0.455,Absent,Suspicious/Spoofed,Absent,Legitimate
+1007.47,2.09,0.251,Absent,Trusted/Corporate,Absent,Legitimate
+492.36,3.25,0.00737,Absent,Suspicious/Spoofed,Present,Legitimate
+1478.61,2.59,0.513,Absent,Trusted/Corporate,Present,Legitimate
+335.78,5.99,0.0231,Absent,Free-Webmail/Common Provider,Present,Legitimate
+748.54,1.31,0.148,Absent,Trusted/Corporate,Present,Legitimate
+577.27,3.39,0.00953,Absent,Trusted/Corporate,Present,Legitimate
+601.17,1.39,0.566,Present,Trusted/Corporate,Present,Phishing
+517.04,1.91,0.723,Present,Free-Webmail/Common Provider,Present,Phishing
+771.92,2.68,0.893,Present,Trusted/Corporate,Present,Legitimate
+1024.1,0.776,0.236,Present,Trusted/Corporate,Present,Phishing
+1082.97,3.53,0.318,Absent,Trusted/Corporate,Present,Legitimate
+330.35,3.71,0.552,Present,Trusted/Corporate,Present,Legitimate
+862.83,0.862,1.02,Present,Trusted/Corporate,Present,Phishing
+596.56,1.87,0.509,Absent,Trusted/Corporate,Present,Legitimate
+1095.08,2.22,0.0514,Present,Suspicious/Spoofed,Present,Legitimate
+754.42,1.43,0.083,Absent,Trusted/Corporate,Present,Phishing
+529.94,1.15,1.92,Present,Free-Webmail/Common Provider,Present,Phishing
+635.83,1.17,0.347,Present,Free-Webmail/Common Provider,Absent,Phishing
+141.09,0.983,0.0274,Absent,Trusted/Corporate,Present,Legitimate
+367.93,1.92,0.279,Absent,Trusted/Corporate,Absent,Legitimate
+330.77,0.773,0.0296,Present,Trusted/Corporate,Present,Phishing
+658.82,1.89,0.00398,Present,Trusted/Corporate,Present,Phishing
+1613.66,3.91,0.00709,Absent,Free-Webmail/Common Provider,Present,Legitimate
+308.35,2.86,0.701,Absent,Trusted/Corporate,Present,Legitimate
+153.58,5.29,0.381,Present,Free-Webmail/Common Provider,Absent,Legitimate
+801.29,0.597,0.00297,Present,Trusted/Corporate,Present,Phishing
+688.35,5.71,0.557,Absent,Suspicious/Spoofed,Present,Legitimate
+868.89,0.943,1.42,Absent,Trusted/Corporate,Present,Legitimate
+442.74,2.04,0.0197,Present,Free-Webmail/Common Provider,Present,Phishing
+479.81,1.18,2.4,Absent,Suspicious/Spoofed,Present,Legitimate
+873.78,2.0,0.0966,Present,Trusted/Corporate,Absent,Phishing
+1103.31,2.93,0.672,Absent,Trusted/Corporate,Present,Legitimate
+438.28,1.92,0.613,Absent,Free-Webmail/Common Provider,Present,Legitimate
+2728.86,3.28,0.264,Absent,Trusted/Corporate,Present,Phishing
+218.41,0.795,0.00431,Present,Trusted/Corporate,Present,Phishing
+934.22,6.47,3.46,Absent,Trusted/Corporate,Present,Legitimate
+2080.0,0.897,0.00158,Absent,Trusted/Corporate,Absent,Phishing
+1107.31,2.23,0.473,Absent,Trusted/Corporate,Present,Phishing
+725.23,3.06,0.397,Present,Trusted/Corporate,Present,Legitimate
+640.67,3.12,0.00182,Absent,Free-Webmail/Common Provider,Present,Phishing
+1335.78,3.35,0.09,Present,Trusted/Corporate,Present,Legitimate
+779.34,0.695,0.129,Absent,Trusted/Corporate,Present,Phishing
+3998.36,2.27,0.0405,Absent,Trusted/Corporate,Absent,Legitimate
+471.13,5.95,0.797,Present,Free-Webmail/Common Provider,Present,Phishing
+252.48,4.03,0.00489,Present,Free-Webmail/Common Provider,Present,Phishing
+412.5,3.37,4.08,Absent,Trusted/Corporate,Present,Legitimate
+768.93,2.72,0.105,Absent,Free-Webmail/Common Provider,Absent,Phishing
+1002.31,2.03,0.187,Absent,Trusted/Corporate,Present,Legitimate
+505.35,3.75,0.0589,Absent,Trusted/Corporate,Present,Phishing
+2331.5,1.07,2.78,Absent,Trusted/Corporate,Present,Phishing
+1085.17,2.63,2.37,Present,Trusted/Corporate,Absent,Phishing
+604.49,1.7,0.00158,Present,Trusted/Corporate,Present,Phishing
+506.96,1.41,1.15,Absent,Trusted/Corporate,Present,Phishing
+599.66,4.18,0.435,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+300.15,1.16,0.188,Absent,Trusted/Corporate,Present,Phishing
+870.72,3.47,0.457,Present,Trusted/Corporate,Present,Phishing
+1012.72,4.3,0.973,Absent,Suspicious/Spoofed,Present,Legitimate
+627.33,2.24,0.933,Absent,Trusted/Corporate,Absent,Phishing
+2420.67,8.72,0.208,Absent,Free-Webmail/Common Provider,Present,Legitimate
+271.51,3.18,0.0136,Present,Trusted/Corporate,Present,Phishing
+800.65,1.92,0.17,Present,Trusted/Corporate,Absent,Phishing
+2347.3,2.69,1.89,Present,Free-Webmail/Common Provider,Absent,Legitimate
+3308.94,6.06,0.000147,Absent,Suspicious/Spoofed,Present,Legitimate
+724.27,4.73,0.0661,Absent,Free-Webmail/Common Provider,Absent,Phishing
+1205.1,3.2,0.000154,Absent,Trusted/Corporate,Present,Legitimate
+456.98,1.64,0.348,Present,Trusted/Corporate,Present,Phishing
+645.58,1.2,0.255,Present,Free-Webmail/Common Provider,Absent,Phishing
+971.25,4.18,1.16,Absent,Free-Webmail/Common Provider,Present,Legitimate
+558.87,3.66,0.451,Absent,Trusted/Corporate,Present,Legitimate
+158.68,0.893,0.141,Present,Free-Webmail/Common Provider,Present,Phishing
+419.18,1.65,2.42,Present,Suspicious/Spoofed,Absent,Legitimate
+1370.31,4.12,1.14,Present,Trusted/Corporate,Present,Phishing
+729.44,3.17,0.0406,Present,Trusted/Corporate,Present,Phishing
+469.35,7.36,0.787,Present,Suspicious/Spoofed,Present,Legitimate
+340.93,1.77,0.0279,Absent,Trusted/Corporate,Absent,Phishing
+1151.33,3.76,0.297,Absent,Free-Webmail/Common Provider,Present,Legitimate
+843.74,3.61,0.06,Absent,Trusted/Corporate,Present,Legitimate
+553.21,4.76,0.00962,Present,Trusted/Corporate,Present,Phishing
+262.71,4.28,0.49,Present,Trusted/Corporate,Absent,Phishing
+1951.8,6.97,0.247,Present,Free-Webmail/Common Provider,Present,Legitimate
+1075.28,1.89,0.35,Present,Free-Webmail/Common Provider,Present,Phishing
+295.86,2.49,0.0138,Absent,Trusted/Corporate,Present,Legitimate
+4008.44,4.01,0.529,Absent,Trusted/Corporate,Present,Legitimate
+824.1,1.23,0.34,Present,Trusted/Corporate,Present,Phishing
+324.85,0.699,1.17,Absent,Trusted/Corporate,Absent,Phishing
+966.46,0.731,0.0279,Absent,Free-Webmail/Common Provider,Present,Phishing
+343.02,1.47,0.00183,Present,Trusted/Corporate,Present,Phishing
+156.42,4.07,0.0719,Absent,Trusted/Corporate,Present,Legitimate
+1141.91,3.73,0.299,Absent,Free-Webmail/Common Provider,Present,Legitimate
+368.04,0.941,0.139,Absent,Trusted/Corporate,Present,Legitimate
+513.1,1.86,0.00893,Absent,Free-Webmail/Common Provider,Present,Legitimate
+184.3,4.81,0.0128,Absent,Trusted/Corporate,Present,Legitimate
+735.93,1.06,0.315,Present,Free-Webmail/Common Provider,Present,Phishing
+320.79,3.19,0.0364,Absent,Trusted/Corporate,Present,Legitimate
+2603.91,1.84,0.148,Absent,Free-Webmail/Common Provider,Present,Phishing
+209.6,2.01,0.727,Absent,Free-Webmail/Common Provider,Present,Legitimate
+386.21,2.68,1.67,Absent,Trusted/Corporate,Present,Legitimate
+521.47,2.44,0.255,Absent,Free-Webmail/Common Provider,Present,Legitimate
+406.53,2.43,0.539,Absent,Trusted/Corporate,Present,Legitimate
+416.15,2.87,0.0467,Absent,Trusted/Corporate,Present,Phishing
+407.35,2.52,0.443,Absent,Trusted/Corporate,Present,Legitimate
+954.42,4.46,0.709,Absent,Trusted/Corporate,Present,Legitimate
+1663.75,2.47,0.000105,Present,Trusted/Corporate,Present,Legitimate
+1054.08,1.76,0.0858,Present,Trusted/Corporate,Absent,Phishing
+434.93,2.32,0.122,Present,Free-Webmail/Common Provider,Present,Legitimate
+576.92,0.509,0.206,Absent,Suspicious/Spoofed,Present,Phishing
+393.92,3.3,0.0108,Present,Free-Webmail/Common Provider,Present,Phishing
+490.81,1.98,0.192,Present,Trusted/Corporate,Absent,Phishing
+1155.11,2.66,1.13,Absent,Trusted/Corporate,Present,Legitimate
+1389.33,2.38,0.688,Absent,Free-Webmail/Common Provider,Present,Legitimate
+283.89,0.999,0.0755,Absent,Free-Webmail/Common Provider,Present,Legitimate
+292.91,0.418,0.000242,Absent,Trusted/Corporate,Absent,Phishing
+657.28,1.41,0.23,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+1264.86,2.89,0.00167,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1485.18,2.83,0.0452,Absent,Free-Webmail/Common Provider,Present,Legitimate
+207.29,1.62,0.131,Absent,Trusted/Corporate,Present,Legitimate
+146.65,1.77,0.0227,Absent,Trusted/Corporate,Present,Legitimate
+437.55,3.03,0.00362,Present,Trusted/Corporate,Present,Phishing
+1266.16,0.934,2.31,Present,Trusted/Corporate,Absent,Legitimate
+152.4,2.33,0.264,Absent,Free-Webmail/Common Provider,Present,Phishing
+1199.43,1.22,1.26,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1129.23,1.77,0.0233,Absent,Trusted/Corporate,Absent,Phishing
+529.82,1.23,0.0978,Absent,Trusted/Corporate,Absent,Phishing
+341.58,0.523,0.0698,Absent,Trusted/Corporate,Present,Legitimate
+2354.02,8.36,0.168,Present,Suspicious/Spoofed,Present,Legitimate
+1415.95,2.93,0.254,Present,Free-Webmail/Common Provider,Absent,Legitimate
+1033.08,6.02,0.0277,Absent,Free-Webmail/Common Provider,Present,Legitimate
+763.96,1.99,1.77,Present,Free-Webmail/Common Provider,Present,Legitimate
+852.3,0.316,3.31,Present,Trusted/Corporate,Present,Phishing
+1158.39,1.4,0.7,Absent,Trusted/Corporate,Absent,Legitimate
+229.58,1.66,0.494,Absent,Suspicious/Spoofed,Present,Legitimate
+563.63,3.93,0.169,Present,Free-Webmail/Common Provider,Absent,Legitimate
+113.31,2.16,0.18,Absent,Suspicious/Spoofed,Present,Legitimate
+701.6,3.05,2.92,Absent,Suspicious/Spoofed,Present,Legitimate
+137.1,0.802,0.168,Absent,Trusted/Corporate,Present,Legitimate
+370.44,3.29,0.0102,Absent,Trusted/Corporate,Present,Legitimate
+568.32,3.9,0.0479,Absent,Trusted/Corporate,Present,Phishing
+2120.1,1.86,1.79,Present,Trusted/Corporate,Present,Legitimate
+587.04,2.66,0.0397,Absent,Suspicious/Spoofed,Absent,Legitimate
+675.67,1.84,2.26,Absent,Free-Webmail/Common Provider,Present,Legitimate
+659.49,1.35,0.00443,Present,Trusted/Corporate,Absent,Phishing
+1420.97,0.78,0.00676,Present,Trusted/Corporate,Present,Legitimate
+447.59,4.9,0.139,Absent,Trusted/Corporate,Present,Legitimate
+535.71,1.78,0.0487,Present,Free-Webmail/Common Provider,Absent,Phishing
+1132.14,1.11,0.334,Absent,Trusted/Corporate,Present,Phishing
+2489.81,1.7,1.5,Absent,Free-Webmail/Common Provider,Present,Legitimate
+262.98,3.37,0.233,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+396.43,1.43,0.427,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1011.74,5.51,0.0146,Absent,Trusted/Corporate,Absent,Legitimate
+410.43,1.44,0.172,Absent,Trusted/Corporate,Present,Legitimate
+774.9,1.39,2.73,Absent,Trusted/Corporate,Present,Legitimate
+341.97,1.35,0.085,Present,Free-Webmail/Common Provider,Present,Legitimate
+234.23,0.63,0.000207,Present,Free-Webmail/Common Provider,Absent,Phishing
+3489.38,3.15,1.05,Absent,Free-Webmail/Common Provider,Present,Legitimate
+980.26,1.91,0.597,Absent,Trusted/Corporate,Present,Phishing
+1122.93,2.94,0.0013,Absent,Trusted/Corporate,Present,Phishing
+722.47,1.54,2.15,Absent,Trusted/Corporate,Present,Legitimate
+269.58,1.8,0.38,Absent,Trusted/Corporate,Present,Legitimate
+439.62,1.66,0.41,Absent,Trusted/Corporate,Present,Phishing
+217.34,1.74,0.577,Absent,Free-Webmail/Common Provider,Absent,Legitimate
+501.25,3.03,0.0284,Absent,Trusted/Corporate,Absent,Phishing
+974.62,2.9,0.0389,Absent,Suspicious/Spoofed,Present,Legitimate
+282.88,3.81,0.631,Absent,Trusted/Corporate,Present,Legitimate
+565.1,0.698,0.685,Present,Trusted/Corporate,Present,Phishing
+952.08,2.03,0.174,Present,Trusted/Corporate,Absent,Phishing
+393.72,1.04,0.0203,Present,Trusted/Corporate,Present,Phishing
+483.59,1.18,0.672,Present,Free-Webmail/Common Provider,Present,Phishing
+829.78,1.8,0.249,Present,Trusted/Corporate,Absent,Legitimate
+2716.96,2.5,0.0229,Absent,Trusted/Corporate,Present,Legitimate
+1006.97,0.99,1.79,Absent,Free-Webmail/Common Provider,Present,Legitimate
+168.35,2.58,0.703,Present,Trusted/Corporate,Present,Phishing
+697.38,1.67,0.00237,Absent,Trusted/Corporate,Present,Legitimate
+1649.42,0.73,0.84,Absent,Free-Webmail/Common Provider,Present,Phishing
+693.73,1.42,0.0568,Present,Trusted/Corporate,Absent,Phishing
+736.4,1.76,0.134,Absent,Trusted/Corporate,Present,Phishing
+446.47,2.97,0.449,Absent,Suspicious/Spoofed,Present,Legitimate
+259.36,0.848,0.17,Absent,Free-Webmail/Common Provider,Present,Legitimate
+1165.12,2.91,0.63,Absent,Trusted/Corporate,Absent,Phishing
+415.71,1.01,0.265,Absent,Suspicious/Spoofed,Present,Legitimate
+2364.6,0.424,0.256,Absent,Trusted/Corporate,Present,Phishing
+679.94,1.43,0.563,Absent,Free-Webmail/Common Provider,Present,Phishing
