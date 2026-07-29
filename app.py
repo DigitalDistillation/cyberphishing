@@ -73,7 +73,9 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     html_content_flag = "Present" if is_html else "Absent"
 
     # --- EMAIL HEADER FORENSICS EXTRACTOR (SPF, DKIM, DMARC) ---
-    spf_status = "None"
+    default_auth = "Pass" if sender_domain_type == "Trusted/Corporate" else "None"
+
+    spf_status = default_auth
     if re.search(r"received-spf:\s*pass|spf=pass", text, re.IGNORECASE):
         spf_status = "Pass"
     elif re.search(r"received-spf:\s*softfail|spf=softfail", text, re.IGNORECASE):
@@ -81,13 +83,13 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     elif re.search(r"received-spf:\s*fail|spf=fail", text, re.IGNORECASE):
         spf_status = "Fail"
 
-    dkim_status = "None"
+    dkim_status = default_auth
     if re.search(r"dkim=pass|dkim-signature:", text, re.IGNORECASE):
         dkim_status = "Pass"
     elif re.search(r"dkim=fail", text, re.IGNORECASE):
         dkim_status = "Fail"
 
-    dmarc_status = "None"
+    dmarc_status = default_auth
     if re.search(r"dmarc=pass", text, re.IGNORECASE):
         dmarc_status = "Pass"
     elif re.search(r"dmarc=fail", text, re.IGNORECASE):

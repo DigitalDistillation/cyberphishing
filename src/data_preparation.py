@@ -37,7 +37,6 @@ class DataPreparation:
         if initial_rows - deduped_rows > 0:
             logging.info(f"Removed {initial_rows - deduped_rows} duplicate rows.")
 
-        # Fill text column if missing
         if self.text_feature in df_cleaned.columns:
             df_cleaned[self.text_feature] = df_cleaned[self.text_feature].fillna("")
 
@@ -57,9 +56,10 @@ class DataPreparation:
         logging.info("Creating Hybrid NLP + Tabular ColumnTransformer preprocessor.")
 
         text_transformer = TfidfVectorizer(
-            max_features=500,
+            max_features=2000,
             stop_words="english",
-            ngram_range=(1, 2)
+            ngram_range=(1, 2),
+            sublinear_tf=True
         )
         numerical_transformer = StandardScaler()
         categorical_transformer = OneHotEncoder(
