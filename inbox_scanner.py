@@ -28,6 +28,20 @@ def load_model():
     return joblib.load(MODEL_PATH)
 
 
+def auto_detect_imap_server(email_address: str, default_server: str = "imap.gmail.com") -> str:
+    """Auto-detect IMAP server host based on email domain."""
+    addr = email_address.lower().strip()
+    if any(addr.endswith(domain) for domain in ["@outlook.com", "@hotmail.com", "@live.com", "@msn.com", "@office365.com"]):
+        return "outlook.office365.com"
+    elif any(addr.endswith(domain) for domain in ["@yahoo.com", "@ymail.com", "@myyahoo.com"]):
+        return "imap.mail.yahoo.com"
+    elif any(addr.endswith(domain) for domain in ["@icloud.com", "@me.com", "@mac.com"]):
+        return "imap.mail.me.com"
+    elif addr.endswith("@gmail.com"):
+        return "imap.gmail.com"
+    return default_server
+
+
 def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dict:
     text = (raw_text or "").strip()
     raw_sender = (sender_email or "").strip()
@@ -108,11 +122,16 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
 
 def scan_imap_inbox(server: str, email_user: str, email_pass: str, hours: int = 1):
     model = load_model()
-    print(f"\n📡 Connecting to IMAP server '{server}' for '{email_user}'...")
+    
+    clean_user = (email_user or "").strip()
+    clean_pass = (email_pass or "").strip().replace(" ", "")
+    target_server = auto_detect_imap_server(clean_user, default_server=server)
+    
+    print(f"\n📡 Connecting to IMAP server '{target_server}' for '{clean_user}'...")
     
     try:
-        mail = imaplib.IMAP4_SSL(server)
-        mail.login(email_user, email_pass)
+        mail = imaplib.IMAP4_SSL(target_server)
+        mail.login(clean_user, clean_pass)
         mail.select("inbox")
 
         since_date = (datetime.now(timezone.utc) - timedelta(hours=hours)).strftime("%d-%b-%Y")
@@ -168,6 +187,12 @@ def scan_imap_inbox(server: str, email_user: str, email_pass: str, hours: int = 
         print("=== INBOX MASS SAFETY & FORENSICS AUDIT REPORT ===")
         print(res_df.to_string(index=False))
 
+    except imaplib.IMAP4.error as e:
+        print(f"⚠️ IMAP Authentication Error: {e}")
+        print("\n💡 Troubleshooting Tips for Gmail/Outlook:")
+        print("1. For Gmail: Use a 16-character Google App Password (myaccount.google.com/apppasswords).")
+        print("2. Ensure 2-Step Verification is ON in your Google Security settings.")
+        print("3. Ensure IMAP is enabled in Gmail Settings -> Forwarding and POP/IMAP.")
     except Exception as e:
         print(f"⚠️ Connection error: {e}")
 

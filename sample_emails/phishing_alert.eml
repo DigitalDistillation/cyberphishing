@@ -1,0 +1,17 @@
+From: security-update@verify-bank-alert.com
+To: victim@company.com
+Subject: URGENT: Your account has been suspended!
+Received-SPF: fail
+Authentication-Results: spf=fail dkim=fail dmarc=fail
+
+Dear Customer,
+
+Your online banking access has been suspended due to unauthorized login attempts. 
+You have 24 hours to verify your identity before your account is permanently locked.
+
+Click the link below immediately to update your billing details and restore access:
+http://verify-bank-alert.com/login
+
+Failure to action required within 24 hours will result in permanent suspension.
+
+Security Support Team
