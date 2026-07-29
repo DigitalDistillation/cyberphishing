@@ -10,6 +10,7 @@ import os
 import sys
 import re
 import argparse
+import getpass
 import imaplib
 import email
 from email.header import decode_header
@@ -180,12 +181,21 @@ def main():
 
     args = parser.parse_args()
 
-    if args.user and args.password:
-        scan_imap_inbox(args.server, args.user, args.password, hours=args.hours)
+    user = args.user
+    password = args.password
+
+    if not user or not password:
+        print("\n📥 Batch Inbox Mass Pre-Scanner")
+        print("--------------------------------")
+        if not user:
+            user = input("Enter Email Address: ").strip()
+        if not password:
+            password = getpass.getpass("Enter App Password (hidden input): ").strip()
+
+    if user and password:
+        scan_imap_inbox(args.server, user, password, hours=args.hours)
     else:
-        print("\n📥 Batch Inbox Mass Pre-Scanner (CLI Mode)")
-        print("Usage Example:")
-        print("  python inbox_scanner.py --user yourname@gmail.com --password 'your-app-password' --hours 1\n")
+        print("Error: Both email address and App Password are required to scan inbox.")
 
 
 if __name__ == "__main__":
