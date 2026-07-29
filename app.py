@@ -10,6 +10,7 @@ import pandas as pd
 import joblib
 
 MODEL_PATH = "models/phishing_detector.pkl"
+PHISHING_THRESHOLD = 0.60  # 60% decision boundary tuned for zero false positives
 
 st.set_page_config(
     page_title="Cybersecurity - Phishing Email Scanner",
@@ -154,12 +155,12 @@ with tab1:
 
             with col2:
                 st.subheader("🛡️ AI Scan Result")
-                pred = model.predict(input_df)[0]
                 prob = model.predict_proba(input_df)[0]
                 phishing_prob = float(prob[1])
                 legit_prob = float(prob[0])
+                is_phishing = phishing_prob >= PHISHING_THRESHOLD
 
-                if pred == 1:
+                if is_phishing:
                     st.error(f"🚨 **PHISHING DETECTED** (Probability: {phishing_prob * 100:.1f}%)")
                     st.progress(phishing_prob)
                 else:
@@ -193,14 +194,14 @@ with tab2:
                 feats = extract_features_from_raw_text(content)
                 input_df = pd.DataFrame([feats])
                 
-                pred = model.predict(input_df)[0]
-                prob = model.predict_proba(input_df)[0][1] * 100
+                prob = model.predict_proba(input_df)[0][1]
+                is_phish = prob >= PHISHING_THRESHOLD
                 
-                status = "🚨 PHISHING THREAT" if pred == 1 else "✅ SAFE TO OPEN"
+                status = "🚨 PHISHING THREAT" if is_phish else "✅ SAFE TO OPEN"
                 batch_results.append({
                     "Filename": file.name,
                     "Verdict": status,
-                    "Threat Probability": f"{prob:.1f}%",
+                    "Threat Probability": f"{prob * 100:.1f}%",
                     "SPF Status": feats["spf_status"],
                     "DKIM Status": feats["dkim_status"],
                     "Urgent Keywords": feats["presence_of_urgent_keywords"],
@@ -255,10 +256,10 @@ with tab3:
     )
 
     if st.button("Scan Manual Features"):
-        m_pred = model.predict(manual_df)[0]
         m_prob = model.predict_proba(manual_df)[0][1]
+        m_is_phish = m_prob >= PHISHING_THRESHOLD
 
-        if m_pred == 1:
+        if m_is_phish:
             st.error(f"🚨 **PHISHING DETECTED** ({m_prob * 100:.1f}%)")
         else:
             st.success(f"✅ **LEGITIMATE EMAIL** ({(1 - m_prob) * 100:.1f}%)")
