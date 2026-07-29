@@ -1,32 +1,27 @@
 """
-Email Scanner Inference Script (Supports CLI text/file parsing)
-Cybersecurity - Detecting Phishing Emails
-
-Scans emails by passing raw email text, uploading email files (.eml, .txt),
-or manually specifying feature parameters.
+Single Email CLI Scanner
+Cybersecurity - Detecting Phishing Emails & Email Forensics
 """
 
 import os
 import sys
 import re
 import argparse
-import joblib
 import pandas as pd
+import joblib
 
 MODEL_PATH = "models/phishing_detector.pkl"
 
 
-def load_scanner_model():
-    """Load trained pipeline model."""
+def load_model():
     if not os.path.exists(MODEL_PATH):
-        print(f"❌ Error: Model artifact '{MODEL_PATH}' not found.")
-        print("   Please run 'python main.py' first to train and save the model!")
+        print(f"Error: Model file '{MODEL_PATH}' not found. Run 'python main.py' first.")
         sys.exit(1)
     return joblib.load(MODEL_PATH)
 
 
 def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dict:
-    text = raw_text or ""
+    text = (raw_text or "").strip()
     sender = (sender_email or "").strip().lower()
 
     email_length = len(text)
@@ -63,81 +58,105 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
             sender_domain_type = "Free-Webmail/Common Provider"
         elif any(re.search(pat, domain) for pat in suspicious_patterns):
             sender_domain_type = "Suspicious/Spoofed"
-    else:
-        if has_urgent and number_of_links > 2:
-            sender_domain_type = "Suspicious/Spoofed"
+        else:
+            sender_domain_type = "Trusted/Corporate"
 
     html_pattern = r"<html|<body|<p|<div|<a\s|<br"
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
     html_content_flag = "Present" if is_html else "Absent"
 
+    # --- EMAIL HEADER FORENSICS EXTRACTOR (SPF, DKIM, DMARC) ---
+    spf_status = "None"
+    if re.search(r"received-spf:\s*pass|spf=pass", text, re.IGNORECASE):
+        spf_status = "Pass"
+    elif re.search(r"received-spf:\s*softfail|spf=softfail", text, re.IGNORECASE):
+        spf_status = "Softfail"
+    elif re.search(r"received-spf:\s*fail|spf=fail", text, re.IGNORECASE):
+        spf_status = "Fail"
+
+    dkim_status = "None"
+    if re.search(r"dkim=pass|dkim-signature:", text, re.IGNORECASE):
+        dkim_status = "Pass"
+    elif re.search(r"dkim=fail", text, re.IGNORECASE):
+        dkim_status = "Fail"
+
+    dmarc_status = "None"
+    if re.search(r"dmarc=pass", text, re.IGNORECASE):
+        dmarc_status = "Pass"
+    elif re.search(r"dmarc=fail", text, re.IGNORECASE):
+        dmarc_status = "Fail"
+
     return {
+        "email_text": text,
         "email_length": max(email_length, 10),
         "number_of_links": min(number_of_links, 20),
         "number_of_attachments": min(number_of_attachments, 10),
         "presence_of_urgent_keywords": presence_of_urgent_keywords,
         "sender_domain_type": sender_domain_type,
         "html_content_flag": html_content_flag,
+        "spf_status": spf_status,
+        "dkim_status": dkim_status,
+        "dmarc_status": dmarc_status,
     }
 
 
-def scan_email_dict(features: dict):
-    model = load_scanner_model()
-    input_data = pd.DataFrame([features])
-
-    pred = model.predict(input_data)[0]
-    prob = model.predict_proba(input_data)[0]
-
-    phishing_prob = prob[1] * 100
-    legit_prob = prob[0] * 100
-
-    print("\n" + "=" * 60)
-    print(" 🛡️  CYBERSECURITY EMAIL SCANNER REPORT")
-    print("=" * 60)
-    print("📧 Scanned Features:")
-    for k, v in features.items():
-        print(f"  • {k:28s}: {v}")
-    print("-" * 60)
-
-    if pred == 1:
-        print(f"🚨 SCAN RESULT: PHISHING DETECTED!")
-        print(f"   Confidence Score: {phishing_prob:.1f}% Phishing (Legitimate: {legit_prob:.1f}%)")
-    else:
-        print(f"✅ SCAN RESULT: LEGITIMATE EMAIL")
-        print(f"   Confidence Score: {legit_prob:.1f}% Legitimate (Phishing: {phishing_prob:.1f}%)")
-    print("=" * 60 + "\n")
-
-
 def main():
-    parser = argparse.ArgumentParser(description="Scan email file or text for Phishing detection.")
-    parser.add_argument("--file", type=str, help="Path to email file (.txt, .eml)")
-    parser.add_argument("--text", type=str, help="Raw email content string")
-    parser.add_argument("--sender", type=str, help="Sender email address")
+    parser = argparse.ArgumentParser(description="Scan email text or file for phishing risks.")
+    parser.add_argument("--file", type=str, help="Path to email text file (.txt or .eml)")
+    parser.add_argument("--text", type=str, help="Raw email text content")
+    parser.add_argument("--sender", type=str, default="", help="Sender email address")
+    parser.add_argument("--length", type=int, help="Email character length")
+    parser.add_argument("--links", type=int, help="Number of links")
+    parser.add_argument("--attachments", type=int, help="Number of attachments")
+    parser.add_argument("--urgent", type=str, choices=["yes", "no"], help="Urgent keywords present?")
+    parser.add_argument("--domain", type=str, choices=["trusted", "freemail", "suspicious"], help="Domain type")
+    parser.add_argument("--html", type=str, choices=["yes", "no"], help="HTML content present?")
 
     args = parser.parse_args()
+    model = load_model()
 
-    if args.file:
-        if not os.path.exists(args.file):
-            print(f"File '{args.file}' not found.")
-            sys.exit(1)
+    if args.file and os.path.exists(args.file):
         with open(args.file, "r", encoding="utf-8", errors="ignore") as f:
-            content = f.read()
-        features = extract_features_from_raw_text(content, sender_email=args.sender)
-        scan_email_dict(features)
+            raw = f.read()
+        feats = extract_features_from_raw_text(raw, sender_email=args.sender)
     elif args.text:
-        features = extract_features_from_raw_text(args.text, sender_email=args.sender)
-        scan_email_dict(features)
+        feats = extract_features_from_raw_text(args.text, sender_email=args.sender)
+    elif args.length is not None:
+        domain_map = {"trusted": "Trusted/Corporate", "freemail": "Free-Webmail/Common Provider", "suspicious": "Suspicious/Spoofed"}
+        feats = {
+            "email_text": "Manual feature override scan.",
+            "email_length": args.length,
+            "number_of_links": args.links or 0,
+            "number_of_attachments": args.attachments or 0,
+            "presence_of_urgent_keywords": "Present" if args.urgent == "yes" else "Absent",
+            "sender_domain_type": domain_map.get(args.domain, "Trusted/Corporate"),
+            "html_content_flag": "Present" if args.html == "yes" else "Absent",
+            "spf_status": "Pass",
+            "dkim_status": "Pass",
+            "dmarc_status": "Pass",
+        }
     else:
-        print("\nPaste raw email text below (press Ctrl+D or Ctrl+Z on new line when done):\n")
-        try:
-            content = sys.stdin.read()
-            if content.strip():
-                features = extract_features_from_raw_text(content)
-                scan_email_dict(features)
-            else:
-                print("No text provided.")
-        except KeyboardInterrupt:
-            print("\nCancelled.")
+        print("\n=== Interactive CLI Email Scanner & Forensics ===")
+        sample_text = input("Enter or paste email text: ")
+        sender_in = input("Enter sender email (optional): ")
+        feats = extract_features_from_raw_text(sample_text, sender_email=sender_in)
+
+    input_df = pd.DataFrame([feats])
+    pred = model.predict(input_df)[0]
+    prob = model.predict_proba(input_df)[0]
+
+    print("\n" + "="*50)
+    print("📊 EXTRACTED FEATURES & FORENSICS:")
+    for k, v in feats.items():
+        if k != "email_text":
+            print(f"  • {k:30s}: {v}")
+
+    print("="*50)
+    if pred == 1:
+        print(f"🚨 VERDICT: PHISHING DETECTED (Risk Probability: {prob[1]*100:.1f}%)")
+    else:
+        print(f"✅ VERDICT: LEGITIMATE EMAIL (Confidence: {prob[0]*100:.1f}%)")
+    print("="*50 + "\n")
 
 
 if __name__ == "__main__":

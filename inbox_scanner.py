@@ -1,6 +1,6 @@
 """
 Inbox Mass Scanner Module
-Cybersecurity - Detecting Phishing Emails
+Cybersecurity - Detecting Phishing Emails & Forensics
 
 Connects to an IMAP email account (Gmail, Outlook, Yahoo) or scans a directory of email files,
 auditing all emails received within the last X hours using the trained hybrid AI model.
@@ -70,6 +70,27 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
     html_content_flag = "Present" if is_html else "Absent"
 
+    # --- EMAIL HEADER FORENSICS EXTRACTOR (SPF, DKIM, DMARC) ---
+    spf_status = "None"
+    if re.search(r"received-spf:\s*pass|spf=pass", text, re.IGNORECASE):
+        spf_status = "Pass"
+    elif re.search(r"received-spf:\s*softfail|spf=softfail", text, re.IGNORECASE):
+        spf_status = "Softfail"
+    elif re.search(r"received-spf:\s*fail|spf=fail", text, re.IGNORECASE):
+        spf_status = "Fail"
+
+    dkim_status = "None"
+    if re.search(r"dkim=pass|dkim-signature:", text, re.IGNORECASE):
+        dkim_status = "Pass"
+    elif re.search(r"dkim=fail", text, re.IGNORECASE):
+        dkim_status = "Fail"
+
+    dmarc_status = "None"
+    if re.search(r"dmarc=pass", text, re.IGNORECASE):
+        dmarc_status = "Pass"
+    elif re.search(r"dmarc=fail", text, re.IGNORECASE):
+        dmarc_status = "Fail"
+
     return {
         "email_text": text,
         "email_length": max(email_length, 10),
@@ -78,13 +99,13 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
         "presence_of_urgent_keywords": presence_of_urgent_keywords,
         "sender_domain_type": sender_domain_type,
         "html_content_flag": html_content_flag,
+        "spf_status": spf_status,
+        "dkim_status": dkim_status,
+        "dmarc_status": dmarc_status,
     }
 
 
 def scan_imap_inbox(server: str, email_user: str, email_pass: str, hours: int = 1):
-    """
-    Connects to IMAP email server and audits all unread/recent emails from the last X hours.
-    """
     model = load_model()
     print(f"\n📡 Connecting to IMAP server '{server}' for '{email_user}'...")
     
@@ -93,7 +114,6 @@ def scan_imap_inbox(server: str, email_user: str, email_pass: str, hours: int = 
         mail.login(email_user, email_pass)
         mail.select("inbox")
 
-        # Search for messages since calculated date
         since_date = (datetime.now(timezone.utc) - timedelta(hours=hours)).strftime("%d-%b-%Y")
         status, data = mail.search(None, f'(SINCE "{since_date}")')
 
@@ -134,15 +154,17 @@ def scan_imap_inbox(server: str, email_user: str, email_pass: str, hours: int = 
 
                     status_str = "🚨 PHISHING" if pred == 1 else "✅ SAFE"
                     results.append({
-                        "Subject": subject[:40],
-                        "Sender": sender[:30],
+                        "Subject": subject[:35],
+                        "Sender": sender[:25],
                         "Status": status_str,
-                        "Threat Risk": f"{prob:.1f}%"
+                        "SPF": feats["spf_status"],
+                        "DKIM": feats["dkim_status"],
+                        "Risk Score": f"{prob:.1f}%"
                     })
 
         mail.logout()
         res_df = pd.DataFrame(results)
-        print("=== INBOX MASS SAFETY AUDIT REPORT ===")
+        print("=== INBOX MASS SAFETY & FORENSICS AUDIT REPORT ===")
         print(res_df.to_string(index=False))
 
     except Exception as e:

@@ -28,6 +28,9 @@ nominal_features:
   - presence_of_urgent_keywords
   - sender_domain_type
   - html_content_flag
+  - spf_status
+  - dkim_status
+  - dmarc_status
 
 # Cross-Validation & Tuning Settings (NLP + Tabular Hybrid Pipeline)
 cv: 5

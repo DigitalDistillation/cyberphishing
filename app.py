@@ -1,6 +1,6 @@
 """
 Streamlit Web Scanner App
-Cybersecurity - Detecting Phishing Emails (NLP + Tabular Machine Learning Engine)
+Cybersecurity - Detecting Phishing Emails (NLP + Tabular + Email Forensics Engine)
 """
 
 import os
@@ -27,7 +27,7 @@ def load_model():
 
 def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dict:
     """
-    Extracts raw email text alongside generalized structural metadata features.
+    Extracts raw email text alongside generalized structural metadata & email header forensics features.
     """
     text = (raw_text or "").strip()
     raw_sender = (sender_email or "").strip()
@@ -71,6 +71,27 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
     is_html = bool(re.search(html_pattern, text, re.IGNORECASE))
     html_content_flag = "Present" if is_html else "Absent"
 
+    # --- EMAIL HEADER FORENSICS EXTRACTOR (SPF, DKIM, DMARC) ---
+    spf_status = "None"
+    if re.search(r"received-spf:\s*pass|spf=pass", text, re.IGNORECASE):
+        spf_status = "Pass"
+    elif re.search(r"received-spf:\s*softfail|spf=softfail", text, re.IGNORECASE):
+        spf_status = "Softfail"
+    elif re.search(r"received-spf:\s*fail|spf=fail", text, re.IGNORECASE):
+        spf_status = "Fail"
+
+    dkim_status = "None"
+    if re.search(r"dkim=pass|dkim-signature:", text, re.IGNORECASE):
+        dkim_status = "Pass"
+    elif re.search(r"dkim=fail", text, re.IGNORECASE):
+        dkim_status = "Fail"
+
+    dmarc_status = "None"
+    if re.search(r"dmarc=pass", text, re.IGNORECASE):
+        dmarc_status = "Pass"
+    elif re.search(r"dmarc=fail", text, re.IGNORECASE):
+        dmarc_status = "Fail"
+
     return {
         "email_text": text,
         "email_length": max(email_length, 10),
@@ -79,14 +100,17 @@ def extract_features_from_raw_text(raw_text: str, sender_email: str = "") -> dic
         "presence_of_urgent_keywords": presence_of_urgent_keywords,
         "sender_domain_type": sender_domain_type,
         "html_content_flag": html_content_flag,
+        "spf_status": spf_status,
+        "dkim_status": dkim_status,
+        "dmarc_status": dmarc_status,
     }
 
 
 model = load_model()
 
-st.title("🛡️ Cybersecurity – Phishing Email Mass Scanner")
+st.title("🛡️ Cybersecurity – Phishing Email Mass Scanner & Forensics Platform")
 st.markdown(
-    "Pre-scan your emails before opening them. Audit single messages or run a **Batch Pre-Scan on past emails**."
+    "Pre-scan your emails before opening them. Includes **SPF/DKIM/DMARC Email Forensics** and AI threat risk evaluation."
 )
 
 if model is None:
@@ -105,7 +129,7 @@ with tab1:
 
     st.subheader("Option B: Paste Raw Email Content")
     sender_input = st.text_input("Sender Email Address (Optional, e.g. john@hotmail.com)")
-    email_text = st.text_area("Paste Full Email Text Here:", height=200)
+    email_text = st.text_area("Paste Full Email Text / Headers Here:", height=200)
 
     raw_text_to_process = ""
     if uploaded_file is not None:
@@ -124,7 +148,7 @@ with tab1:
             col1, col2 = st.columns([1, 1])
 
             with col1:
-                st.subheader("📊 Feature Analysis")
+                st.subheader("📊 Feature & Header Forensics Analysis")
                 disp_df = input_df.drop(columns=["email_text"]).T.rename(columns={0: "Value"})
                 st.dataframe(disp_df, use_container_width=True)
 
@@ -142,11 +166,13 @@ with tab1:
                     st.success(f"✅ **LEGITIMATE EMAIL** (Confidence: {legit_prob * 100:.1f}%)")
                     st.progress(legit_prob)
 
-                st.markdown("### Structural & NLP Analysis:")
+                st.markdown("### Structural & Forensics Analysis:")
                 st.write(f"- **Sender Domain**: `{features['sender_domain_type']}`")
+                st.write(f"- **SPF Auth Status**: `{features['spf_status']}`")
+                st.write(f"- **DKIM Signature**: `{features['dkim_status']}`")
+                st.write(f"- **DMARC Policy**: `{features['dmarc_status']}`")
                 st.write(f"- **Urgent Keywords**: `{features['presence_of_urgent_keywords']}`")
                 st.write(f"- **Links Count**: `{features['number_of_links']}`")
-                st.write(f"- **HTML Content**: `{features['html_content_flag']}`")
 
 with tab2:
     st.subheader("📥 Mass Inbox Pre-Scanner (Batch Audit)")
@@ -175,6 +201,8 @@ with tab2:
                     "Filename": file.name,
                     "Verdict": status,
                     "Threat Probability": f"{prob:.1f}%",
+                    "SPF Status": feats["spf_status"],
+                    "DKIM Status": feats["dkim_status"],
                     "Urgent Keywords": feats["presence_of_urgent_keywords"],
                     "Links": feats["number_of_links"],
                 })
@@ -192,7 +220,7 @@ with tab2:
             st.dataframe(res_df, use_container_width=True)
 
 with tab3:
-    st.subheader("Manual Feature Specification")
+    st.subheader("Manual Feature Specification & Forensics Simulation")
     c1, c2 = st.columns(2)
 
     with c1:
@@ -205,6 +233,9 @@ with tab3:
         urgent = st.selectbox("Urgent Keywords", ["Absent", "Present"])
         domain = st.selectbox("Sender Domain", ["Trusted/Corporate", "Free-Webmail/Common Provider", "Suspicious/Spoofed"])
         html = st.selectbox("HTML Flag", ["Present", "Absent"])
+        spf = st.selectbox("SPF Status", ["Pass", "Softfail", "Fail", "None"])
+        dkim = st.selectbox("DKIM Status", ["Pass", "Fail", "None"])
+        dmarc = st.selectbox("DMARC Status", ["Pass", "Fail", "None"])
 
     manual_df = pd.DataFrame(
         [
@@ -216,6 +247,9 @@ with tab3:
                 "presence_of_urgent_keywords": urgent,
                 "sender_domain_type": domain,
                 "html_content_flag": html,
+                "spf_status": spf,
+                "dkim_status": dkim,
+                "dmarc_status": dmarc,
             }
         ]
     )
@@ -230,4 +264,4 @@ with tab3:
             st.success(f"✅ **LEGITIMATE EMAIL** ({(1 - m_prob) * 100:.1f}%)")
 
 st.markdown("---")
-st.caption("Cybersecurity Phishing Detection Project")
+st.caption("Cybersecurity Phishing Detection & Email Forensics Platform")
